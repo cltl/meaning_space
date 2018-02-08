@@ -1,0 +1,16 @@
+sandwiches,breakfast,lunch,1
+surfboard,raft,water,1
+banana,cucumber,long,1
+lambs,cattle,wool,1
+shrimp,spinach,pink,1
+bus,taxi,passengers,1
+garage,brick,large,1
+walkway,alley,walk,1
+polyurethane,polyester,material,1
+spoon,potato,wood,1
+machete,razor,long,1
+teeth,tongue,white,1
+cop,soldier,civilian,1
+woman,doctor,talk,1
+broom,peacock,long,1
+elbow,finger,arm,1

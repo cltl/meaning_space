@@ -1,12 +1,12 @@
 import sys
-from embeddings import load_model, sim
+from embeddings import load_model, sim_wv
 from utils import load_triples, results_to_file, decisions_to_file
 
 
 def sim_check(concept1, concept2, prop, model):
 
-    sim1 = sim(concept1, prop, model)
-    sim2 = sim(concept2, prop, model)
+    sim1 = sim_wv(concept1, prop, model)
+    sim2 = sim_wv(concept1, prop, model)
 
     if sim1 > sim2:
         answer = '1'
