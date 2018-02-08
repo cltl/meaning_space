@@ -30,7 +30,7 @@ def get_highest_def_sim(prop, definition_dict, model):
 
 
 
-def sim_def_check(concept1, concept2, prop, threshold1, threshold2):
+def sim_def_check(concept1, concept2, prop, threshold1, threshold2, model):
 
 
     """
@@ -53,6 +53,7 @@ def sim_def_check(concept1, concept2, prop, threshold1, threshold2):
     decision_dict['depths_concept1'] = ' '.join([str(d) for d in get_syns_depths(syns_concept1)])
     decision_dict['level'] = '-'
     decision_dict['decision_depth'] = '-'
+    decision_dict['system'] = 'def-sim'
 
     def_sim1, syn1 = get_highest_def_sim(prop, def_dict1, model)
     def_sim2, syn2 = get_highest_def_sim(prop, def_dict2, model)

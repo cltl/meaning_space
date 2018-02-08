@@ -5,13 +5,21 @@ from utils import load_triples, results_to_file, decisions_to_file
 
 def sim_check(concept1, concept2, prop, model):
 
+    decision_dict = dict()
+
     sim1 = sim_wv(concept1, prop, model)
     sim2 = sim_wv(concept1, prop, model)
 
+    decision_dict['depths_concept1'] = '-'
+    decision_dict['level'] = '-'
+    decision_dict['decision_depth'] = '-'
+    decision_dict['system'] = 'sim'
+
     if sim1 > sim2:
-        answer = '1'
+        decision_dict['answer'] = '1'
     else:
-        answer = '0'
+        decision_dict['answer'] = '0'
+    return decision_dict
 
 
 def embedding_baseline(data, model):

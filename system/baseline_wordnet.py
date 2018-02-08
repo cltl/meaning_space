@@ -28,6 +28,7 @@ def direct_def_check(concept1, concept2, prop):
     decision_dict['depths_concept1'] = ' '.join([str(d) for d in get_syns_depths(syns_concept1)])
     decision_dict['level'] = '-'
     decision_dict['decision_depth'] = '-'
+    decision_dict['system'] = 'def'
 
     for syn1, def1 in def_dict1.items():
 
