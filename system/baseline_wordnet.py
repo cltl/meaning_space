@@ -1,7 +1,7 @@
 from wordnet import get_all_definitions
 from wordnet import get_all_synsets
 from wordnet import get_syn_depth, get_syns_depths
-from utils import load_triples, results_to_file
+from utils import load_triples, results_to_file, decisions_to_file
 
 
 
@@ -25,7 +25,7 @@ def direct_def_check(concept1, concept2, prop):
 
     syns_concept1 = get_all_synsets(concept1)
 
-    decision_dict['depths_concept1'] = get_syns_depths(syns_concept1)
+    decision_dict['depths_concept1'] = ' '.join([str(d) for d in get_syns_depths(syns_concept1)])
     decision_dict['level'] = '-'
     decision_dict['decision_depth'] = '-'
 
@@ -69,6 +69,7 @@ def def_baseline(data):
 
     triples = load_triples(data)
     answers = []
+    decision_dicts = []
     name = 'def_baseline_'+data
 
 
@@ -80,6 +81,7 @@ def def_baseline(data):
         def_answer = None
 
         def_decision_dict = direct_def_check(concept1, concept2, prop)
+        decision_dicts.append(def_decision_dict)
         def_answer = def_decision_dict['answer']
 
         if def_answer:
@@ -91,3 +93,4 @@ def def_baseline(data):
     print('len data ', len(triples))
     print('len answers ', len(answers))
     results_to_file(triples, answers, name)
+    decisions_to_file(triples, decision_dicts, name)

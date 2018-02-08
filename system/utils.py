@@ -33,6 +33,28 @@ def results_to_file(triples_test, answers, name):
         for triple, answer in zip(triples_test, answers):
             outfile.write(','.join(triple)+','+str(answer)+'\n')
 
+
+def decisions_to_file(triples_test, decision_dicts, name, labels = False):
+
+    # I don't know how many and what items are in the dict, so I sort the
+    # keys alphabetically and then write them
+    names = sorted(decision_dicts[0].keys())
+
+    with open('../evaluation/'+name+'.txt', 'w') as outfile:
+        outfile.write('concept1,concept2,attribute'+','+','.join(names)+'\n')
+
+        for triple, decision_dict in zip(triples_test, decision_dicts):
+
+            sorted_decisions = []
+
+            for name in names:
+                sorted_decisions.append(str(decision_dict[name]))
+
+            outfile.write(','.join(triple)+','+','.join(sorted_decisions)+'\n')
+
+
+
+
 def error_analysis_file(triples_test, labels_test, answers, decisions, name):
 
     if not os.path.isdir('../error_analysis'):
