@@ -1,26 +1,31 @@
-#from gensim.models import Word2Vec
 from gensim import models
 from gensim.models import Word2Vec
 import numpy as np
-from numpy import dot, zeros, dtype, float32 as REAL
 import math
 import sys
 import os
 
 
-def load_model(filepath):
+def load_model(model_path):
 
-    #model=Word2Vec.load(filepath)
-    #binay format (like google news model):
-    #model = KeyedVectors.load_word2vec_format(filepath, binary=True)  # C binary format
-    # From text format (this does not make sense for the google model
-    #and takes too much disk space anyway):
-    #model = KeyedVectors.load_word2vec_format(filepath, binary=False)  # C text format
+    """
+    Load model in word2vec Google News format
+    Input: path/to/model
+    Output: Word2Vec model in binary format
+    """
 
-    model=models.KeyedVectors.load_word2vec_format(filepath, binary=True)
+    model = models.KeyedVectors.load_word2vec_format(model_path, binary=True)
     return model
 
 def sim(word1, word2, model):
+
+    """
+    Calculate cosine similarity between word1 and word2
+    Check if words are in the model vocabulary, if not,
+    return a cosine similarity of 0.0
+    Input: word1 (str), word2 (str), model (Word2Vec model)
+    Output: cosine similarity (float)
+    """
 
     if (word1 in model.vocab) and (word2 in model.vocab):
         sim = model.similarity(word1, word2)
@@ -184,3 +189,18 @@ def analogy_input_ignore(concept1, concept2, prop, model):
     closest_word=model.most_similar(positive=[concept2,prop], negative=[concept1], topn=1, input_ignore=False)
 
     return closest_word[0]
+
+
+if __name__ == '__main__':
+
+    #replace this with the path to your the word2vec model:
+
+    model_path = '../model/movies.bin'
+    model = load_model(model_path)
+
+    # test if model is loaded in the correct format:
+
+    for n, word in enumerate(model.vocab):
+        print(word)
+        if n == 10:
+            break

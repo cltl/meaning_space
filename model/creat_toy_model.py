@@ -8,7 +8,7 @@ from nltk.corpus import movie_reviews
 
 mr = Word2Vec(movie_reviews.sents())
 
-mr.wv.save_word2vec_format('movies.bin')
+mr.wv.save_word2vec_format('movies.bin', binary = True)
 
 
 #model.wv.save_word2vec_format('model.bin')
