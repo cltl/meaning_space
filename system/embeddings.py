@@ -124,6 +124,8 @@ def highest_sim_word_list(word, word_list, model):
 
                 sim = sim_wv(word, w, model)
                 sims.append((sim, w))
+    else:
+        sims.append((0.0, '-'))
 
     return max(sims)
 

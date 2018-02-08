@@ -1,0 +1,17 @@
+concept1,concept2,attribute,answer,decision_depth,depths_concept1,level
+sandwiches,breakfast,lunch,0,-,8 4 3,-
+surfboard,raft,water,0,-,7 2,-
+banana,cucumber,long,0,-,9 10,-
+lambs,cattle,wool,None,-,9 10 8 8 6 3,-
+shrimp,spinach,pink,0,-,8 6 11 4,-
+bus,taxi,passengers,0,-,8 9 8 12 2 3 2,-
+garage,brick,large,0,-,8 11 3,-
+walkway,alley,walk,0,-,7,-
+polyurethane,polyester,material,0,-,9,-
+spoon,potato,wood,0,-,9 5 11 1 5,-
+machete,razor,long,0,-,10,-
+teeth,tongue,white,0,-,5 9 7 6 7 7,-
+cop,soldier,civilian,None,-,11 2 2,-
+woman,doctor,talk,0,-,8 8 12 5,-
+broom,peacock,long,0,-,8 10 11 3 3,-
+elbow,finger,arm,0,-,8 6 10 7 6 3 3,-
