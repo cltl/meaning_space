@@ -101,9 +101,6 @@ def sim_wv(wv1, wv2, model):
 
 
 
-
-
-
 def nearest_neighbors_subtracted(word1, word2, model):
 
     if (word1 in model.vocab) and (word2 in model.vocab):
@@ -115,9 +112,20 @@ def nearest_neighbors_subtracted(word1, word2, model):
     return neighbors
 
 
+def highest_sim_word_list(word, word_list, model):
 
+    sims = []
 
+    if word in model.vocab:
 
+        for w in word_list:
+
+            if w in model.vocab:
+
+                sim = sim_wv(word, w, model)
+                sims.append((sim, w))
+
+    return max(sims)
 
 
 
@@ -134,12 +142,20 @@ if __name__ == '__main__':
     test_vec1 = model['star']
     test_vec2 = model['actor']
 
-    sim1 = sim_wv(test_word1, test_word2)
-    sim2 = sim_wv(test_vec1, test_vec2)
+    sim1 = sim_wv(test_word1, test_word2, model)
+    sim2 = sim_wv(test_vec1, test_vec2, model)
 
     print('Does sim1 equal sim2 ?')
     print('sim1: ', sim1)
     print('sim2: ', sim2)
+
+    # check if highest_sim_word_list works:
+
+    word = 'actor'
+    word_list = ['actress', 'star', 'director', 'red']
+
+    highest_sim_word = highest_sim_word_list(word, word_list, model)
+    print('highest sim with "actor": ', highest_sim_word)
 
     # test if model is loaded in the correct format:
 
