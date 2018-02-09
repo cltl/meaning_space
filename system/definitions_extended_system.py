@@ -3,7 +3,7 @@ from embeddings import load_model, sim_wv, highest_sim_word_list
 from utils import load_triples, results_to_file, decisions_to_file
 from wordnet import get_all_definitions, get_syn_depth, get_syns_depths
 from wordnet import get_all_synsets
-
+import os
 
 def sim_definition(prop, definition, model):
 
@@ -117,7 +117,11 @@ def def_extended_system(data, threshold1, threshold2, model):
 
 if __name__ == '__main__':
 
+
     data = sys.argv[1]
+
+    if not os.path.isdir('../results'):
+        os.mkdir('../results')
 
     # replace this with the path to your the word2vec model
     model_path = '../model/movies.bin'

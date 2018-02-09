@@ -1,7 +1,7 @@
 import sys
 from embeddings import load_model, sim_wv
 from utils import load_triples, results_to_file, decisions_to_file
-
+import os
 
 def sim_check(concept1, concept2, prop, model):
 
@@ -46,6 +46,9 @@ def embedding_baseline(data, model):
 if __name__ == '__main__':
 
     data = sys.argv[1]
+
+    if not os.path.isdir('../results'):
+        os.mkdir('../results')
 
     # replace this with the path to your the word2vec model
     model_path = '../model/movies.bin'

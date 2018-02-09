@@ -2,7 +2,8 @@ from wordnet import get_all_definitions
 from wordnet import get_all_synsets
 from wordnet import get_syn_depth, get_syns_depths
 from utils import load_triples, results_to_file, decisions_to_file
-
+import os
+import sys
 
 
 def direct_def_check(concept1, concept2, prop):
@@ -95,3 +96,14 @@ def def_baseline(data):
     print('len answers ', len(answers))
     results_to_file(triples, answers, name)
     decisions_to_file(triples, decision_dicts, name)
+
+if __name__ == '__main__':
+
+    if not os.path.isdir('../results'):
+        os.mkdir('../results')
+
+
+    data = sys.argv[1]
+
+
+    def_baseline(data)

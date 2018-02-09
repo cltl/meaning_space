@@ -5,7 +5,7 @@ from wordnet import get_all_definitions
 from baseline_wordnet import direct_def_check
 from definitions_extended_system import sim_def_check
 from baseline_embedding_sim import sim_check
-
+import os
 
 def full_def_embedding_sim_system(data, threshold1, threshold2, model):
 
@@ -55,6 +55,9 @@ def full_def_embedding_sim_system(data, threshold1, threshold2, model):
 if __name__ == '__main__':
 
     data = sys.argv[1]
+
+    if not os.path.isdir('../results'):
+        os.mkdir('../results')
 
     # replace this with the path to your the word2vec model
     model_path = '../model/movies.bin'

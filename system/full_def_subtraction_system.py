@@ -7,7 +7,7 @@ from definitions_extended_system import sim_def_check
 from baseline_embedding_subtraction import extract_features
 from classification import scale_training_test_features, train_classifier
 from classification import test_classifier
-
+import os
 
 
 def full_def_embedding_sub_system(data_train, data_test, threshold1, threshold2, model):
@@ -74,6 +74,10 @@ def full_def_embedding_sub_system(data_train, data_test, threshold1, threshold2,
 
 
 if __name__ == '__main__':
+
+    if not os.path.isdir('../results'):
+        os.mkdir('../results')
+
 
     data_train = sys.argv[1]
     data_test = sys.argv[2]

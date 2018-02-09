@@ -3,7 +3,7 @@ from embeddings import load_model, sim_wv, subtract
 from utils import load_triples, results_to_file, decisions_to_file
 from classification import scale_training_test_features, train_classifier
 from classification import test_classifier
-
+import os
 
 def get_sim_subtracted(concept1, concept2, prop, model):
 
@@ -61,6 +61,9 @@ if __name__ == '__main__':
 
     data_train = sys.argv[1]
     data_test = sys.argv[2]
+
+    if not os.path.isdir('../results'):
+        os.mkdir('../results')
 
     # replace this with the path to your the word2vec model
     model_path = '../model/movies.bin'
