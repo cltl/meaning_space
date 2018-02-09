@@ -2,3 +2,4 @@
 
 model/movies.bin
 results/*
+evaluation/*.txt
