@@ -1,0 +1,17 @@
+concept1,concept2,attribute,answer,decision_depth,depths_concept1,level,system
+sandwiches,breakfast,lunch,0,-,-,-,sub
+surfboard,raft,water,0,-,7 2,-,def
+banana,cucumber,long,0,-,-,-,sub
+lambs,cattle,wool,0,-,-,-,sub
+shrimp,spinach,pink,0,-,-,-,sub
+bus,taxi,passengers,0,8,8 9 8 12 2 3 2,synset,def
+garage,brick,large,0,-,-,-,sub
+walkway,alley,walk,0,-,-,-,sub
+polyurethane,polyester,material,0,6,9,hypernym,def
+spoon,potato,wood,1,11,9 5 11 1 5,synset,def
+machete,razor,long,0,-,-,-,sub
+teeth,tongue,white,0,-,-,-,sub
+cop,soldier,civilian,0,-,-,-,sub
+woman,doctor,talk,0,-,-,-,sub
+broom,peacock,long,1,8,8 10 11 3 3,synset,def
+elbow,finger,arm,1,8,8 6 10 7 6 3 3,synset,def

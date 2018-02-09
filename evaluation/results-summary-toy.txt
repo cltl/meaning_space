@@ -1,1 +1,6 @@
+full_def_embedding_subtraction_system_0.75-0.23_toy,0.3333333333333333,0.125,0.37662337662337664
 def_baseline_toy,0.3333333333333333,0.125,0.37662337662337664
+full_def_embedding_sim_system_0.75-0.23_toy,0.3333333333333333,0.125,0.32620320855614976
+embedding_sub_cl_baseline_1-1_logistic_toy,0.5,1.0,-
+embedding_sim_baseline_toy,-,-,-
+def_extended_0.75-0.23_toy,-,-,-
