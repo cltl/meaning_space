@@ -1,0 +1,689 @@
+seal	animal	event	part	animate	object
+turnip	plant	vegetable	food	object	animate
+dish	object	food
+sandwiches	food	object
+fridge	device	object	container
+beets	plant	vegetable	food	object	animate
+firewood	material	object
+horse	animal	animate	object
+gorges	landscape	event	location
+butter	food	material
+kidneys	part	bodypart_organ	object	animate
+sled	vehicle	object
+senator	person	status	profession	animate	object
+clarinets	instrument	object
+crow	bird	animal	animate	object
+hammer	tool	object
+olive	fruit	plant	tree	food	object	animate
+shower	event	object	location
+cello	instrument	object
+dinner	event	time	food
+roof	part	location	building	object
+oak	tree	plant	animate	object
+fuel	substance
+vegetables	category	food
+basenji	animal	dog	animate	object
+anchor	object	tool
+storm	phenomenon	weather
+mammals	category
+celery	vegetable	plant	object	food	animate
+tractor	vehicle	object
+toad	animal	animate	object
+earl	person	status	animate	object
+drizzle	weather	phenomenon
+dagger	weapon	object
+walls	object	part
+pants	worn	object
+spatula	tool	object
+saucer	object	part
+fort	building	location	object
+sheepdog	animal	dog	animate	object
+walkway	location	landscape
+garlic	vegetable	plant	object	food	animate
+pelican	bird	animal	animate	object
+skateboard	vehicle	object
+cop	person	profession	animate	object
+bridegroom	relationship	gender	person	animate	object
+oboe	instrument	object
+aircraft	vehicle	object
+invertebrates	animal	category	animate	object
+oil	substance
+insects	animal	category	animate	object
+octopus	animal	animate	object
+seaweed	plant	animate	object
+peas	vegetable	plant	object	food	animate
+cord	object	part
+pastries	food
+elbow	part	bodypart_organ	object	animate
+prostate	part	bodypart_organ	object	animate
+socks	worn	object
+pig	animal	animate	object
+streets	location	landscape
+banker	person	profession	animate	object
+livestock	animal	category	animate	object
+snowfall	weather	phenomenon
+girl	person	gender	age	animate	object
+piano	instrument	object
+hair	part	material	bodypart_organ	object	animate
+ox	animal	animate	object
+fawn	animal	animate	object
+carrot	vegetable	plant	food	object	animate
+starboard	location	part	object
+arm	part	object	bodypart_organ	animate
+bacon	food
+eyelids	part	bodypart_organ	object	animate
+learners	person	animate	object
+son	person	gender	relationship	animate	object
+obelisk	object	building
+roofing	object	part
+princess	person	gender	status	animate	object
+arranger	person	profession	animate	object
+panels	organization	object	part
+nectarine	fruit	plant	food	object	animate
+lamp	device	object
+spider	insect	animal	animate	object
+raisin	food
+butterfly	insect	animal	animate	object
+bathtub	object	location	container
+wrist	part	bodypart_organ	object	animate
+nose	part	bodypart_organ	object	animate
+lake	landscape	location
+tune	event	art
+fingers	part	bodypart_organ	object	animate
+cigarettes	object
+rubber	material
+cadmium	substance
+hero	person	status	animate	object
+ophthalmologist	specialist	profession	person	animate	object
+neck	part	bodypart_organ	object	animate
+desk	object	part
+osteopath	specialist	profession	person	animate	object
+thoroughfare	location
+bench	furniture	object
+mouth	part	bodypart_organ	object	animate
+boyfriend	relationship	gender	person	animate	object
+grandparent	relationship	age	person	animate	object
+tank	container	object
+girls	age	gender	person	animate	object
+sugar	substance	food
+transept	building	part	object
+prams	vehicle	object
+curtains	object	part
+wrists	part	bodypart_organ	object	animate
+lentils	vegetable	food	object
+aunt	relationship	gender	person	animate	object
+hen	gender	animal	animate	object
+shore	landscape	location
+deer	animal	animate	object
+shacks	building	location	object
+mother-in-law	relationship	gender	person	age	animate	object
+orange	fruit	color	tree	plant	object	appearance	food	animate
+sofa	furniture	object
+cloakroom	building	location	part	object
+netball	game
+sweater	worn	object
+bowel	part	bodypart_organ	object	animate
+moose	animal	animate	object
+wool	material
+door	object	part
+tortoise	animal	animate	object
+waterfowl	bird	animal	category	animate	object
+tea	food	substance
+prison	location	building	organization	object
+hotel	location	building	organization	object
+psychiatrist	specialist	profession	person	animate	object
+dolphin	animal	animate	object
+crossbow	weapon	object
+assistants	profession	person	animate	object
+lens	part	object	bodypart_organ	animate
+apse	building	part	object
+skis	equipment	object
+computer	device	object
+bison	animal	animate	object
+meat	material	food
+god	abstract_concept
+vegetable	category	plant	food	animate	object
+consultant	profession	person	animate	object
+maid	status	gender	person	animate	object
+ocean	landscape	location
+hallway	building	part	location	object
+congressman	profession	status	person	animate	object
+dinners	event	food	time
+houses	building	object
+naturalist	quality
+asparagus	food	vegetable	plant	object	animate
+supper	food	event	time
+skillet	tool	container	object
+vehicle	category	object
+grooms	relationship	gender	person	event	animate	object
+building	category	location	building	object
+lawyer	profession	person	animate	object
+yacht	vehicle	object
+cougar	animal	animate	object
+indie	genre	quality
+orthodontist	specialist	profession	person	animate	object
+drum	instrument	object
+leg	part	object	bodypart_organ	animate
+sword	weapon	object
+bowl	container	object
+groomsmen	relationship	gender	person	animate	object
+afternoon	time	part	object
+lunch	food	event	time
+minicab	vehicle	object
+niece	relationship	gender	person	animate	object
+dishwasher	device	object
+wheelbarrow	tool	vehicle	object
+motel	building	organization	location	object
+mosquito	insect	animal	animate	object
+sailboat	vehicle	object
+cavalry	organization	part	object
+bracelet	object	worn
+prisons	building	organization	location	object
+director	status	profession	person	animate	object
+venus	planet	location	object
+lung	part	bodypart_organ	object	animate
+swan	bird	animal	animate	object
+kitchen	building	part	location	object
+cod	animal	fish	food	animate	object
+chilli	vegetable	food	plant	object	animate
+tray	object	tool
+auntie	relationship	gender	person	animate	object
+ruler	tool	object	status	person	animate
+chief	status	person	animate	object
+crocodile	animal	animate	object
+cauliflower	vegetable	plant	object	food	animate
+snow	material	phenomenon
+creatures	category
+bath	event
+elk	animal	animate	object
+pie	food	bird	animal	animate	object
+frog	animal	animate	object
+blankets	object
+muscle	part	material	bodypart_organ	object	animate
+hurricane	weather	phenomenon
+song	art	genre	text
+pumpkin	vegetable	plant	food	object	animate
+floor	location	part	object
+catapult	tool	weapon	device	object
+optician	profession	person	animate	object
+fences	building	object
+daughter	relationship	gender	person	animate	object
+policewoman	profession	gender	person	animate	object
+tornado	phenomenon
+milk	substance	food
+raccoon	animal	animate	object
+sardine	animal	food	animate	object
+request	event
+violin	instrument	object
+bridge	building	location	object
+teenager	age	person	animate	object
+sea	landscape	location
+polyurethane	material	 substance
+mammal	animal	animate	object
+oat	plant	food	animate	object
+polyester	material
+spoon	tool	object
+tripod	tool	object
+bookcase	furniture	object
+eyebrows	part	bodypart_organ	object	animate
+dietician	specialist	profession	person	animate	object
+kid	age	person	animate	object
+artist	profession	person	animate	object
+barn	location	building	object
+night	time
+hare	animal	animate	object
+ceiling	part	building	object
+alumni	person	animate	object
+balcony	part	building	object
+pyramid	building	object
+professor	profession	person	animate	object
+rat	animal	animate	object
+forehead	part	bodypart_organ	object	animate
+uncle	relationship	gender	person	animate	object
+rocket	vehicle	weapon	food	plant	vegetable	object	animate
+elephant	animal	animate	object
+nave	building 	part	object
+shrub	plant	animate	object
+undergraduates	status	person	animate	object
+weekly	time
+goose	animal	animate	object
+rum	substance	food
+wife	relationship	gender	person	animate	object
+tangerine	fruit	food	object	plant	animate
+yoghurt	substance	food
+seawater	substance
+garage	building	location	part	object
+beetle	animal	animate	object
+cucumber	vegetable	food	plant	object	animate
+limb	part	bodypart_organ	object	animate
+cart	vehicle	container	object
+car	vehicle	object
+surfboard	equipment	object
+infant	age	person	animate	object
+historian	specialist	profession	person	animate	object
+watercolour	substance
+woollen	material	quality
+scientist	profession	person	animate	object
+dvds	device	object
+river	landscape	location
+teacher	profession	person	animate	object
+bridesmaids	relationship	gender	person	animate	object
+flamingo	bird	animal	animate	object
+groom	event	relationship	gender	person	animate	object
+films	event	device	object
+turtle	animal	animate	object
+borzoi	dog	animal	animate	object
+cockroach	animal	 insect	animate	object
+acrylic	substance	material
+debris	material	object
+cap	worn	object
+brides	relationship	gender	person	animate	object
+philanthropist	
+gin	substance	food
+zinc	substance	material
+gatehouse	building	location	object
+beaver	animal	animate	object
+squid	animal	food	animate	object
+tomatoes	fruit	plant	food	object	animate
+banjo	instrument	object
+rake	tool	object
+buffalo	animal	animate	object
+executive	profession	person	animate	object
+kite	object	vehicle
+groin	part	location	bodypart_organ	object	animate
+pub	building	location	organization	object
+tack	tool	object
+whip	weapon	object
+aluminium	material
+marble	object	material
+rifle	weapon	object
+margarine	substance	food
+trumpet	instrument	object
+army	organization	collection
+lacrosse	game
+angle	shape	appearance
+grandmother	relationship	gender	age	person	animate	object
+bladder	part	container	bodypart_organ	object	animate
+albums	collection	object
+mosquitoes	animal	animate	object
+hebrew	language
+couch	furniture	object
+child	age	person	animate	object
+detective	profession	person	animate	object
+monks	profession	gender	person	animate	object
+drinks	food	category
+architect	profession	person	animate	object
+lips	part	bodypart_organ	object	animate
+ostrich	bird	animal	animate	object
+slingshot	weapon	object
+eyebrow	part	bodypart_organ	object	animate
+canyon	landscape	location
+machete	tool	weapon	object
+mouse	animal	animate	object
+man	gender	person	age	animate	object
+meal	food	event
+deputy	profession	person	animate	object
+sleet	weather	phenomenon
+co-star	profession	person	animate	object
+banana	fruit	food	plant	object	animate
+moth	animal	animate	object
+spleen	part	bodypart_organ	object	animate
+juvenile	quality	age
+winds	weather	phenomenon
+steel	material
+cots	furniture	object	building	location
+guns	weapon	object
+cliffs	landscape	location
+caribou	animal	animate	object
+vehicles	category	object
+worm	animal	animate	object
+trousers	worn	object
+pot	container	object
+detectives	profession	person	animate	object
+finger	part	bodypart_organ	object	animate
+dresser	furniture	object	container
+lunches	food	event
+judge	profession	person	animate	object
+girlfriend	relationship	gender	person	animate	object
+facade	part	object
+stone	object	material
+grape	fruit	food	object	plant	animate
+cameras	device	object
+governor	status	profession	person	animate	object
+potato	vegetable	plant	food	object	animate
+whale	animal	animate	object
+scree	material
+chiropractor	specialist	profession	person	animate	object
+mushroom	plant	food	animate	object
+cot	furniture	object	building	location
+hut	building	location	object
+writer	profession	person	animate	object
+cousin	relationship	person	animate	object
+balloon	vehicle	object
+bassoon	instrument	object
+vine	plant	animate	object
+wine	food	substance
+disciple	profession	person	animate	object
+lounge	building	part	location	object
+chest	part	bodypart_organ	object	animate
+tendon	part	bodypart_organ	object	animate
+box	container	object
+porch	building	part	object
+sir	status	gender	person	animate	object
+strainer	device	tool	object
+gate	building	part	object
+dvd	device	object
+doors	object	part	location
+cloister	building	location	organization	object
+snacks	food
+jeep	vehicle	object
+husband	relationship	gender	person	animate	object
+nostrils	part	bodypart_organ	object	animate
+priest	profession	person	animate	object
+hygienist	profession	person	animate	object
+sauce	substance	food
+diplomat	profession	person	animate	object
+snack	food
+steak	food
+corkscrew	tool	object
+granddaughter	relationship	gender	person	animate	object
+floors	building	part	location	object
+belly	part	bodypart_organ	object	animate
+bride	relationship	gender	person	animate	object
+cantaloupe	fruit	food	plant	object	animate
+translations	abstract_concept
+scarf	worn	object
+father	relationship	gender	person	animate	object
+leaves	part	object
+falcon	bird	animal	animate	object
+thigh	part	bodypart_organ	object	animate
+faucet	part	device	object
+sandals	worn	object
+saturn	plant	object	animate
+introit	part	object
+stick	weapon	tool	object	event
+terrier	dog	animal	animate	object
+froth	material
+chocolate	food	substance
+camel	animal	animate	object
+boy	age	gender	person	animate	object
+neurologist	specialist	profession	person	animate	object
+park	landscape	location
+washbasin	device	container	object
+knee	part	bodypart_organ	object	animate
+juice	substance	food
+salad	food
+spine	part	bodypart_organ	object	animate
+nightgown	worn	object
+donkey	animal	animate	object
+computers	device	object
+ankle	part	bodypart_organ	object	animate
+eagle	bird	animal	animate	object
+keyboard	device	part	object
+father-in-law	relationship	gender	person	animate	object
+coconut	fruit	food	object
+boys	age	gender	person	animate	object
+carpet	furniture	object	location
+teeth	part	bodypart_organ	object	animate
+ears	part	bodypart_organ	object	animate
+motorcycles	vehicle	object
+sausage	food
+goat	animal	animate	object
+pram	vehicle	object
+throat	part	bodypart_organ	object	animate
+sheep	animal	animate	object
+thighs	part	bodypart_organ	object	animate
+subsidiary	organization	quality	part	object
+sheds	building	location	object
+painter	profession	person	animate	object
+news	abstract_concept
+pope	profession	gender	person	animate	object
+shoulder	part	bodypart_organ	object	animate
+journalist	profession	person	animate	object
+shed	building	location	object
+creek	landscape	location
+salads	food	plant	animate	object
+clouds	weather	phenomenon	material
+actor	profession	person	animate	object
+cheese	food	material	object
+suv	vehicle	object
+pianist	profession	person	animate	object
+skin	part	bodypart_organ	material	object	animate
+plum	fruit	object	food
+nerve	part	bodypart_organ	object	animate
+room	building	part	object
+lady	status	gender	person	animate	object
+physiotherapist	profession	person	animate	object
+baby	age	person	animate	object
+flute	instrument	object
+surgeon	specialist	profession	person	animate	object
+children	age	person	animate	object
+sisters	relationship	gender	person	animate	object
+hawk	bird	animal	animate	object
+cat	animal	animate	object
+postgraduate	profession	person	animate	object
+church	location	organization	building	object
+spear	weapon	object
+ball	object	shape	appearance
+bird	category	animal	animate	object
+actress	profession	gender	person	animate	object
+infants	age	person	animate	object
+sidewalk	landscape	location
+scholar	profession	person	animate	object
+kidney	part	bodypart_organ	object	animate
+earth	planet	location
+friend	relationship	person	animate	object
+limbs	part	bodypart_organ	object	animate
+prince	status	gender	person	animate	object
+sash	part	object
+chemist	specialist	profession	person	animate	object
+babies	age	person	animate	object
+mothers	relationship	gender	age	person	animate	object
+minibus	vehicle	object
+christmas	time	event
+rice	food	plant	animate	object
+island	location	landscape
+squirrel	animal	animate	object
+graduates	person	event	animate	object
+pipe	tool	shape	object	part	appearance	container
+foliage	material	part	object
+ring	shape	object	appearance	worn	appearance
+slag	material
+seagull	bird	animal	animate	object
+apple	fruit	food	tree	plant	object	animate
+hose	object	part	tool
+toe	part	bodypart_organ	object	animate
+umbrella	tool	object	worn
+lungs	part	bodypart_organ	object	animate
+trombone	instrument	object
+cherry	food	fruit	tree	plant	object	animate
+shoulders	part	bodypart_organ	object	animate
+businessman	profession	gender	person	animate	object
+sledgehammer	tool	object
+kitchenette	building	part	object
+fathers	relationship	gender	person	animate	object
+harpsichord	instrument	object
+truck	vehicle	object
+basket	container	object
+fabrics	category	material
+dove	bird	animal	animate	object
+jesuit	religion	person	animate	object
+songwriter	profession	person	animate	object
+republican	person	animate	object
+tape	device	object	event
+chicken	animal	food	animate	object
+zucchini	vegetable	food	plant	object	animate
+lion	animal	animate	object
+pupil	part	bodypart_organ	profession	person	animate	object
+baron	status	person	animate	object
+soup	food	substance
+sheriff	profession	person	animate	object
+hall	building	part	object
+coat	worn	object
+raft	vehicle	object
+bay	landscape	location
+duvets	object
+gloves	worn	object
+seed	part	object	abstract_concept
+trout	animal	animate	object
+caterpillar	animal	animate	object
+arborist	profession	person	animate	object
+glossary	collection	part	object
+cigars	object
+potatoes	plant	food	vegetable	object	animate
+canoe	vehicle	object
+adults	age	person	animate	object
+patio	building	part	object
+dermatologist	specialist	profession	person	animate	object
+shores	landscape	location
+towels	object
+bar	location	building	organization	object
+epistle	text
+racer	person	animate	object
+ledge	shape	part	object	appearance
+nickel	object
+highchair	furniture	object
+skunk	animal	animate	object
+basketball	game
+lane	location	landscape
+rain	weather	phenomenon
+honeydew	substance
+widow	relationship	gender	person	animate	object
+torah	text
+skyscraper	building	location	object
+daily	time
+leaf	part	object
+pews	furniture	object	part
+onions	vegetable	plant	food	object	animate
+bat	animal	animate	object
+brother	relationship	gender	person	animate	object
+singer	profession	person	animate	object
+steep	shape	appearance	landscape	location	appearance
+gangster	person	animate	object
+muscles	part	material	bodypart_organ	object	animate
+floppy	quality
+duck	bird	animal	food	animate	object
+stork	bird	animal	animate	object
+herbs	plant	category	food	animate	object
+stool	furniture	object
+otolaryngologist	specialist	profession	person	animate	object
+nail	tool	part	bodypart_organ	object	animate
+ear	part	bodypart_organ	object	animate
+shack	building	location	object
+hip	part	bodypart_organ	object	animate
+crab	animal	food	animate	object
+lenses	tool	part	bodypart_organ	object	animate
+trail	location	landscape
+mother	relationship	gender	person	age	animate	object
+day	time
+cheeks	part	bodypart_organ	object	animate
+raisins	food
+urologist	specialist	profession	person	animate	object
+breakfast	food	event	time
+wagon	vehicle	object
+liquor	substance	food
+flooring	furniture	part	object
+educator	profession	person	animate	object
+stomach	part	bodypart_organ	object	animate
+station	location	building	object
+lover	relationship	person	animate	object
+raven	bird	animal	animate	object
+broadsheet	object
+alligator	animal	animate	object
+tomato	fruit	plant	food	object	animate
+bazooka	weapon	object
+tuna	animal	food	animate	object
+plaster	material	substance
+lobster	animal	food	animate	object
+soya	plant	food	animate	object
+album	collection	object
+cloud	weather	phenomenon
+belt	worn	object
+guitar	instrument	object
+viscose	material
+pheasant	bird	animal	animate	object
+speech	event	abstract_concept	text
+entrepreneur	profession	person	animate	object
+roofs	building	part	object
+lip	part	bodypart_organ	object	animate
+pan	container	object
+fog	weather	phenomenon
+jupiter	tree	plant	animate	object
+train	vehicle	object
+showers	device	event	object
+lord	status	gender	person	animate	object
+midwife	profession	person	animate	object
+bike	vehicle	object
+trolley	container	object
+tequila	substance	food
+roast	food	quality	event
+pane	object	part
+dentist	profession	person	animate	object
+bear	animal	animate	object
+horses	animal	animate	object
+shrubs	plant	category	animate	object
+cloths	worn	category	object
+mountain	landscape	location
+limousine	vehicle	object
+camera	device	object
+sunflower	plant	animate	object
+student	profession	person	animate	object
+metal	material
+woman	age	gender	person	animate	object
+ropes	tool	object
+harp	instrument	object
+cotton	material	plant	animate	object
+eyelid	part	bodypart_organ	object	animate
+beach	landscape	location
+ligament	part	bodypart_organ	object	animate
+graduate	person	event	animate	object
+walrus	animal	animate	object
+mists	weather	phenomenon
+heir	status	person	animate	object
+shrimp	animal	food	animate	object
+morning	time
+invertebrate	category	animal	animate	object
+face	part	bodypart_organ	object	animate
+camcorder	device	object
+zebra	animal	animate	object
+cassette	device	object
+lambs	animal	food	animate	object
+clarinet	instrument	object
+tin	container	object	material	substance
+ushers	profession	person	event	animate	object
+cabins	building	object
+bathroom	building	location	part	object
+knees	part	bodypart_organ	object	animate
+grandad	relationship	gender	age	person	animate	object
+nurse	profession	person	animate	object
+daughters	relationship	gender	person	animate	object
+tiger	animal	animate	object
+tablecloths	object
+armour	worn	object
+cloak	worn	object
+salamander	animal	animate	object
+documentary	abstract_concept
+finch	bird	animal	animate	object
+clock	device	object
+barrel	container	object
+venison	material	food
+waterfalls	landscape	location
+fence	object
+grapefruit	fruit	food	plant	object	animate
+pear	fruit	food	plant	object	animate
+salmon	animal	food	animate	object
+botanist	specialist	profession	person	animate	object
+pharmacist	profession	person	animate	object
+tunnels	building	location	shape	appearance	object
+lamb	animal	food	animate	object
+cabbage	vegetable	plant	food	object	animate
+chain	object	event
+ceo	status	profession	person	animate	object
+cow	animal	animate	object
+broom	tool	object
+condos	building	part	object
+music	sensory perception	sound	art
+otter	animal	animate	object
+shelter	location	building	object
+mom	gender	age	person	animate	object
+	

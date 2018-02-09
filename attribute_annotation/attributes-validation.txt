@@ -1,0 +1,577 @@
+branch	part	object
+art	category	abstract_concept
+gas	substance
+informative	quality
+bark	part	event	object
+virgin	person	animate	object
+consume	event
+juniper	plant	tree	animate	object
+bones	part	substance	object
+business	organization	location
+rodent	category	animal	animate	object
+storage	abstract_concept
+teach	event
+octopus	animal	animate	object
+jaws	part	bodypart_organ	object	animate
+innocent	quality
+mental	quality
+unhealthy	quality
+make	event
+concrete	quality
+player	person	animate	object
+smell	event	sensory perception
+shoots	event
+climb	event
+overcast	quality	weather
+fishing	event
+textile	quality	material
+tube	shape	object	tool	appearance
+steel	material
+tv	device	object
+horses	animal	animate	object
+finances	abstract_concept
+underground	location
+planet	object	category
+metal	material
+white	color	appearance
+arrest	event
+listen	event
+armed	quality
+shop	location	organization	building	object
+salt	substance
+hired	quality
+grape	fruit	food	object
+bends	event
+sand	material	substance
+driving	event
+meat	material	food
+courtyard	location	building	organization	object
+ship	vehicle	object
+shoot	event
+ferocious	quality
+processor	part	object	device
+garden	location	landscape
+protein	substance
+dark	quality	appearance
+passengers	person	animate	object
+defend	event
+stove	object	device
+makeshift	quality
+living	quality
+woven	material	quality
+anatomy	discipline
+parquet	material
+sleeps	event
+lyrics	art	text	abstract_concept
+rounded	shape	appearance
+limb	part	bodypart_organ	object	animate
+warmers	worn	object
+boots	worn	object
+manmade	quality
+pebble	object
+sore	sensory perception
+brain	part	bodypart_organ	object	animate
+woman	person	gender	age	animate	object
+store	event	organization	location
+follicle	part	bodypart_organ	object	animate
+windows	object	part
+civilian	person	animate	object
+hold	event
+green	color	appearance
+light	quality	appearance
+chicken	animal	food	animate	object
+camp	location	building	organization	object
+entertain	event
+wound	event	location
+parents	person	relationship	animate	object
+starchy	taste	sensory perception
+text	category	abstract_concept
+alcohol	substance	food
+extend	event
+entangled	quality
+tape	event	object	device
+swallows	event
+christian	quality	religion
+weak	quality
+lights	event	object
+mainland	location	category
+tile	object	part
+cattle	animal 	category
+plant	category
+pray	event
+hunt	event
+cartilage	material
+ball	object	shape	appearance
+fat	substance
+split	event
+listens	event
+snack	food
+government	organization
+grilled	quality
+balm	material
+back	part	location	bodypart_organ	object	animate
+healthy	quality
+cure	event	abstract_concept
+exterior	location
+semicircular	shape	appearance
+close	event	location
+convict	event	person	animate	object
+talk	event
+drunk	quality
+bar	location	organization	building	object
+adhesive	quality
+package	object
+poor	quality
+federal	quality
+sitting	quality
+classroom	location	organization	part	building	object
+mexican	quality	nationality
+oil	substance
+newspaper	object	organization
+shingles	object	part
+kids	person	age	animate	object
+remote	location	quality
+phalanx	object
+deal	event
+average	quality	magnitude
+vulnerable	quality
+private	quality
+creates	event
+race	event	category
+photo	object
+healthcare	organization	abstract_concept
+court	organization	location	building	object
+irish	quality	nationality	language
+tree	plant	category	animate	object
+freight	object	part
+cuts	event
+vehicle	category	object
+bulging	shape	appearance
+breath	event
+record	object	abstract_concept
+tissue	material	part	bodypart_organ	object	animate
+band	organization	collection
+defense	event	abstract_concept
+newborn	person	age	animate	object
+walk	event
+graduate	person	event	animate	object
+greasy	quality
+university	location	organization	building	object
+digestion	event	process
+eggs	object
+archeology	discipline
+fish	animal	food	animate	object
+covers	event	object	part
+official	person	quality	animate	object
+cook	event	person	animate	object
+still	quality	sensory perception
+racks	object	part
+baked	quality
+rails	object	part
+write	event
+romance	relationship
+helps	event
+open	quality	event
+electricity	phenomenon	abstract_concept
+itchy	quality	sensory perception
+keyboard	object	part	device
+slums	location
+chain	object	event
+varnish	material
+canvas	object	material
+jellyfish	animal	animate	object
+bullets	object	part	weapon
+eyeshadow	worn	object
+worker	person	profession	animate	object
+noble	quality
+paint	material	substance
+missionary	person	profession	animate	object
+savanna	location	landscape
+placenta	part	bodypart_organ	object	animate
+guts	part	bodypart_organ	object	animate
+gang	organization	collection
+relative	quality	person	relationship	animate	object
+cute	quality
+cellulose	material
+abdomen	part	bodypart_organ	object	animate
+legs	part	bodypart_organ	object	animate
+entrance	location	part	object
+bluish	color	appearance
+substance	category
+metallic	appearance
+wedding	event
+dairy	material	category
+mane	part	bodypart_organ	object	animate
+nose	part	bodypart_organ	object	animate
+tooth	part	bodypart_organ	object	animate
+house	location	building	object
+hooves	part	bodypart_organ	object	animate
+seat	object	status	abstract_concept
+alumni	person	animate	object
+prescription	text	abstract_concept
+educated	quality
+dish	object	food
+girl	person	gender	age	animate	object
+wicker	object	container
+wife	person	gender	relationship	animate	object
+love	relationship	abstract_concept
+human	category
+housing	abstract_concept
+urine	substance
+law	abstract_concept
+command	event
+cotton	material	plant	animate	object
+heal	event
+african	quality	nationality
+mouth	part	bodypart_organ	object	animate
+lipstick	worn	object
+movie	art
+decide	event
+picture	object
+top	location	worn	object
+waistcoat	worn	object
+breastfeed	event
+female	gender	person	animate	object
+thigh	part	bodypart_organ	object	animate
+morning	time
+branches	part	event	object
+sound	sensory perception	event
+qualifications	abstract_concept
+runs	event
+wood	material
+evening	time
+clay	material	substance
+rocks	object
+customer	person	animate	object
+window	object	part
+break	event
+misty	quality	weather
+orbit	shape	location	appearance
+diplomas	object	abstract_concept
+concave	shape	appearance
+jamaica	location
+transplant	event
+diploma	object	abstract_concept
+bus	vehicle	object
+mojito	food
+investigation	event
+hears	event	sensory perception
+hammer	tool	object
+joint	part	object	bodypart_organ	animate
+grownup	person	age	animate	object
+people	category
+airplane	vehicle	object
+help	event
+adolescent	person	age	animate	object
+controlled	quality
+microfiber	material
+cylindrical	shape	appearance
+built	quality
+cannons	object	weapon
+grey	color	appearance
+cockroach	insect	animal	animate	object
+flesh	material
+sting	event	sensory perception
+columns	object	part
+bowels	part	bodypart_organ	object	animate
+pretty	quality
+weather	phenomenon	abstract_concept
+flat	shape	location	part	appearance	object
+ice	material
+rubble	object
+language	abstract_concept
+pouring	quality
+endings	time
+muscles	material	part	bodypart_organ	object	animate
+wear	event
+glucose	substance
+childbirth	event
+stand	event
+interprets	event
+joints	part	bodypart_organ	object	animate
+song	text	art	genre
+instrumental	quality
+long	shape	duration	magnitude	appearance
+mythical	quality
+flexible	quality
+man	person	gender	age	animate	object
+sharp	shape	appearance
+pores	shape	appearance
+plants	category
+create	event
+gifts	object	abstract_concept
+hemp	plant	material	animate	object
+marry	event
+army	organization	collection
+pork	material	food
+gun	object	weapon
+geology	discipline
+sugarcane	part	object
+midday	time
+movement	event	category
+milk	substance	food
+strings	object
+magazine	object	organization
+warm	quality	sensory perception
+publish	event
+truck	vehicle	object
+leafy	quality
+sheet	object
+power	phenomenon	abstract_concept
+class	organization	abstract_concept
+stick	event	object	tool	weapon
+tail	part	bodypart_organ	object	animate
+foot	part	bodypart_organ	object	animate
+poetry	art	abstract_concept
+petals	part	object
+autocratic	quality
+sweet	quality	taste	sensory perception
+nicotine	substance
+natural	quality
+contain	event
+carbon	substance
+cinematography	art	abstract_concept
+royalty	quality	person	status	animate	object
+religion	category	abstract_concept
+winter	time
+meal	food	event
+technical	quality
+educators	person	profession	animate	object
+location	category
+polish	event
+christianity	religion
+male	person	gender	animate	object
+five	magnitude	number
+carry	event
+draw	event
+baptize	event
+stone	object	material
+cyclone	phenomenon	weather
+research	event
+school	location	organization	abstract_concept
+steep	shape	appearance
+labor	event	abstract_concept
+watch	event	person	animate	object
+omniscient	quality
+wash	event
+addictive	quality
+surgery	event	discipline	location
+artistic	quality
+design	event	art	abstract_concept
+sister	person	gender	relationship	animate	object
+nephew	person	gender	relationship	animate	object
+wool	material
+vegetable	category	plant	animate	object
+vessels	object	part	container	bodypart_organ	animate
+death	event
+skin	part	material	bodypart_organ	object	animate
+drive	event
+stench	sensory perception
+doors	object	part	location
+books	object	text
+drink	event	food
+cocoa	substance	food
+palpates	event
+sail	event	object	part
+greek	quality	nationality	language
+drugs	substance
+thunder	phenomenon	part	weather	object
+bean	plant	part	food	vegetable	object	animate
+breakfast	event	time	food
+mature	quality	event
+acid	substance
+catalysts	substance	abstract_concept
+romantic	quality	relationship
+umbilical	quality	location
+juicy	quality
+glass	material	object
+performs	event
+vinegar	substance	food
+printed	quality
+psychoanalysis	discipline
+balustrade	object	part	building
+oral	quality	location
+war	event
+bandage	worn	object
+pinch	magnitude	quantity	event
+elongated	shape	appearance
+digest	event
+mathematics	discipline
+jump	event
+swallow	event
+send	event
+donates	event
+brass	material
+bad	quality
+acidic	quality	sensory perception	taste
+nobility	person	status	animate	object
+impersonates	event
+support	event	abstract_concept
+video	device	object
+bacteria	animal	animate	object
+concierge	person	profession	animate	object
+arm	part	object	bodypart_organ	animate
+fulfill	event
+bend	event
+bottom	location
+explodes	event
+iron	material
+column	object	part	building
+magnetic	quality	material
+act	event
+deep	shape	appearance
+eucharist	event
+outdoors	location
+observe	event
+kill	event
+connects	event
+fingers	part	bodypart_organ	object	animate
+digital	quality
+elastic	quality
+domesticated	quality
+trees	plant	category	animate	object
+western	location	quality
+russian	quality	nationality	language
+bed	object	furniture
+snail	animal	animate	object
+theater	location	organization
+outdoor	location
+teaches	event
+notes	event	text
+water	substance	landscape	location
+hear	event	sensory perception
+tongue	part	bodypart_organ	object	animate
+road	location	landscape
+attacks	event
+strain	event	abstract_concept
+jumps	event
+classical	quality
+rotate	event
+hunting	event
+rooms	location	part	building	object
+deer	animal	animate	object
+round	shape	appearance
+pink	color	appearance
+kills	event
+clean	quality	event
+backyard	location	part	building	object
+holy	quality
+daiquiri	food
+forearm	part	bodypart_organ	object	animate
+lens	object	part	bodypart_organ	animate
+knowledge	abstract_concept
+degree	magnitude	abstract_concept
+malaria	phenomenon
+profession	category
+abbey	building	location	object
+line	shape	appearance
+tasty	quality	sensory perception	taste
+muddy	quality
+colors	category
+parish	organization
+cells	part	bodypart_organ	object	animate
+tentacles	part	bodypart_organ	object	animate
+fly	event	animal	insect	animate	object
+seed	part	abstract_concept	object
+college	organization	location	building	object
+right	location	quality
+office	location	organization	building	object
+bracelet	object
+players	person	part	animate	object
+periodical	object	organization	quality	time
+pull	event
+clucks	event	sensory perception	sound
+bathtub	object	container	location
+cut	event
+depression	phenomenon
+genre	category	abstract_concept
+inelastic	quality
+monk	person	gender	profession	animate	object
+enforce	event
+customers	person	animate	object
+football	event	game
+coats	worn	object
+swims	event
+puffy	quality	appearance
+vertical	orientation
+cold	quality	sensory perception
+apartment	location	part	building	object
+lunch	time	event	food
+leads	event
+politics	discipline
+bite	event	sensory perception
+combat	event
+space	location
+linoleum	material
+secret	abstract_concept
+smells	event	sensory perception
+perform	event
+canister	object	container
+basket	object	container
+fast	quality
+adult	person	age	animate	object
+dirt	material
+coin	object
+inside	location
+material	category
+musical	quality
+building	location	category
+recorded	quality
+elderly	quality	age
+limbs	part	bodypart_organ	object	animate
+nostrils	part	bodypart_organ	object	animate
+sheath	object	container
+pediatric	quality
+hair	part	material	bodypart_organ	object	animate
+gland	part	bodypart_organ	object	animate
+appointed	quality
+composed	quality
+spine	part	bodypart_organ	object	animate
+soda	food
+eyes	part	bodypart_organ	object	animate
+moves	event
+shiny	quality	appearance
+polymer	material
+sun	object	phenomenon
+scarf	worn	object
+vitamins	substance
+royal	quality	status
+fabric	material
+bike	vehicle	object
+forest	location	collection
+congress	organization	event
+lover	person	relationship	animate	object
+wings	part	bodypart_organ	object	animate
+real	quality
+wheels	part	object
+load	event	object
+transforms	event
+retina	part	bodypart_organ	object	animate
+melt	event
+pads	event	object	worn
+soldiers	person	profession	animate	object
+hands	part	object	bodypart_organ	animate
+patient	person	animate	object
+sensitive	quality
+kitchen	location	part	building	object
+small	magnitude	size
+humans	category
+trek	event
+pipes	object	part	tool
+orange	fruit	color	tree	object	appearance	plant	animate
+pedestrian	person	animate	object
+strangle	event
+train	vehicle	object
+information	abstract_concept
+alive	quality
+large	size	magnitude
+madmen	person	animate	object
+care	event
+cornea	part	bodypart_organ	object	animate
+kid	person	age	animate	object
+elbow	part	bodypart_organ	object	animate
+state	location	abstract_concept
+dense	quality	shape	appearance
+camping	event
+twin	person	relationship	animate	object
+	
