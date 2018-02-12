@@ -36,6 +36,7 @@ def direct_def_check(concept1, concept2, prop):
     for syn1, def1 in def_dict1.items():
 
         if prop in def1:
+
             def1_answer = 1
             decision_dict['decision1_syn'] = str(syn1)
 
@@ -44,12 +45,16 @@ def direct_def_check(concept1, concept2, prop):
             # in this case, it is not necessary to find the hyponym of the decision synset
             # in order to calculate the depth difference later
             if syn1 in syns_concept1:
-                decision_dict['concept1_syns'] = str(syn1)
+                decision_dict['concept1_syn'] = str(syn1)
+
+                break
             else:
                 for syn_concept1 in syns_concept1:
                     if check_if_syn_in_hyponyms(syn_concept1, syn1):
                         decision_dict['concept1_syn'] = str(syn_concept1)
                         break
+                    else:
+                        decision_dict['concept1_syn'] = 'pos_dec_syn_is_'+str(syn1.pos())
 
 
 
@@ -58,13 +63,14 @@ def direct_def_check(concept1, concept2, prop):
             def2_answer = 1
             decision_dict['decision2_syn'] = str(syn2)
 
-            decision_dict['decision1_syn'] = str(syn1)
+            decision_dict['decision2_syn'] = str(syn2)
             # check if the decision was taken at the level of the synsets of concept1
             # this is the case, if the decision synsets is one of the syns of concept1
             # in this case, it is not necessary to find the hyponym of the decision synset
             # in order to calculate the depth difference later
-            if syn1 in syns_concept1:
-                decision_dict['concept1_syns'] = str(syn1)
+            if syn2 in syns_concept2:
+                decision_dict['concept2_syn'] = str(syn2)
+                break
             else:
                 for syn_concept2 in syns_concept2:
                     if check_if_syn_in_hyponyms(syn_concept2, syn2):
