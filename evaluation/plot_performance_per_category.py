@@ -29,7 +29,7 @@ def get_performance(list_systems, list_categories):
 
     for system_name in list_systems:
 
-        system = 'error_analysis_'+system_name+'.csv'
+        system = 'categories/cat_'+system_name+'.txt'
 
         #names.append(system.lstrip('error_analysis').rstrip('.csv'))
         with open(system) as infile:
@@ -54,8 +54,8 @@ def get_performance(list_systems, list_categories):
 
 def plot_performances(list_systems, list_categories, name):
 
-    if not os.path.isdir('graphs'):
-        os.mkdir('graphs')
+    if not os.path.isdir('category_graphs'):
+        os.mkdir('category_graphs')
 
     dpoints  = get_performance(list_systems, list_categories)
     print(dpoints)
@@ -66,7 +66,7 @@ def plot_performances(list_systems, list_categories, name):
     sns.set_style('whitegrid')
     ax = sns.barplot(x = 'system', y = 'performance', hue = 'category', data = df)
     ax.legend(loc=2)
-    plt.savefig('graphs/'+name+'.png')
+    plt.savefig('category_graphs/'+name+'.png')
     plt.show()
 
 
@@ -76,13 +76,14 @@ if __name__ == '__main__':
 
     #list_systems = glob.glob('error_analysis*.csv')[:3]
 
-    list_systems = ['embeddings_baseline', 'analogy-scaled_mlp_emb_rev1-1-logistic']
+    list_systems = ['def_baseline_toy', 'embedding_sim_baseline_toy', ]
     #list_systems = ['embeddings_baseline', 'analogy-scaled_mlp_emb_rev1-1-logistic']
     # Wordnet constraint systems in isolation:
     #list_systems = [f.lstrip('error_analysis_').split('.')[0] for f in glob.glob('*wn_constraints_*.csv') if '-rev' in f]
     #list_categories = ['animate-bodypart_organ-object-part', 'material', 'appearance-color', 'event', 'animate-gender-object-person', 'magnitude-size', 'appearance-duration-magnitude-shape']
-    cutoff = 10
+    cutoff = 0
     list_categories = compare_performances(list_systems, cutoff)
-    name = 'sim_subtraction_baselines'+str(cutoff)
-    #name = 'embedding_baselines_manual_cat-list'
+
+    name = '-vs-'.join(list_systems)+'-'+str(cutoff)
+
     plot_performances(list_systems, list_categories, name)

@@ -197,7 +197,6 @@ def evaluate_per_category(system_paths, gold_path, data):
 
     for system_path in system_paths:
         print(system_path)
-        system_name = system_path.split('/')[-1].rstrip('.txt')
         error_analysis_path = 'categories/cat_'+system_name+'.txt'
 
         cateogry_cases_to_file(gold_path, system_path, annotations_path, error_analysis_path)

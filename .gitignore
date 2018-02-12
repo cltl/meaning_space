@@ -1,7 +1,8 @@
 # Files not to be tracked
 
-model/movies.bin
+model/*.bin
 results/*
 evaluation/results-summary*.txt
 evaluation/decisions/*
 evaluation/categories/*
+evaluation/category_graphs/*
