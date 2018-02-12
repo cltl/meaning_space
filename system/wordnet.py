@@ -143,3 +143,33 @@ def get_lemmas(syn):
     lemmas = [str(lemma.name()) for lemma in syn.lemmas()]
 
     return lemmas
+
+def get_all_hyponyms(syn):
+
+    all_hyponyms = []
+
+    for hypo in syn.hyponyms():
+        all_hyponyms.append(hypo)
+
+    for hypo in all_hyponyms:
+        for hypo1 in hypo.hyponyms():
+            if hypo1 not in all_hyponyms:
+                all_hyponyms.append(hypo1)
+    return all_hyponyms
+
+def check_if_syn_in_hyponyms(syn1, syn2):
+
+    """
+    Chech if syn1 in hyponyms of syn2
+    """
+
+    hyponyms = get_all_hyponyms(syn2)
+    hyponyms.append(syn2)
+
+    if syn1 in hyponyms:
+        answer = True
+
+    else:
+        answer = False
+
+    return answer

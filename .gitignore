@@ -6,3 +6,4 @@ evaluation/results-summary*.txt
 evaluation/decisions/*
 evaluation/categories/*
 evaluation/category_graphs/*
+evaluation/wordnet_distinction_level/*
