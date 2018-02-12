@@ -7,3 +7,5 @@ evaluation/decisions/*
 evaluation/categories/*
 evaluation/category_graphs/*
 evaluation/wordnet_distinction_level/*
+data/*.txt
+!data/toy.txt
