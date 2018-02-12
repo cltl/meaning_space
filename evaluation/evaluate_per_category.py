@@ -1,6 +1,8 @@
 from collections import defaultdict
 from collections import Counter
 import glob
+import sys
+import os
 
 
 def load_data(system_path, gold_path):
@@ -58,7 +60,7 @@ def get_cases_per_category(system, gold, annotation_dict):
     props_gold = set([triple[2] for triple in gold])
     props_system = set([triple[2] for triple in system])
 
-    assert len(props_gold) == len(props_system) == len(annotation_dict.keys()), 'annotations don t match data'
+    assert len(props_gold) == len(props_system) #== len(annotation_dict.keys()), 'annotations don t match data'
 
     line_counter = 0
     category_dict = defaultdict(list)
@@ -104,13 +106,13 @@ def get_cases_per_cat_relation(system, gold, annotation_dict_pro, annotation_dic
 
     return category_dict
 
-def find_cases(category, system_path):
+def find_cases(category, system_path, data):
 
-    annotation_path = '../annotated_properties/properties-annotated-corrected.txt'
+    annotation_path = '../attribute_annotation/attributes-validation.txt'
 
     annotation_dict = load_annotations(annotation_path)
 
-    system, gold = load_data(system_path, '../results/gold-test.txt')
+    system, gold = load_data(system_path, '../data/'+data+'.txt')
 
     target_cases = []
 
@@ -128,12 +130,11 @@ def find_cases(category, system_path):
 
 def cateogry_cases_to_file(gold_path, system_path, annotations_path, error_analysis_path):
 
-    gold, system = load_data(gold_path, system_path)
+    system, gold = load_data(system_path, gold_path)
 
     annotation_dict = load_annotations(annotations_path)
 
     category_dict = get_cases_per_category(system, gold, annotation_dict)
-    print(type(category_dict))
 
     category_evaluation_dict = dict()
 
@@ -189,24 +190,28 @@ def cateogry_cases_to_file(gold_path, system_path, annotations_path, error_analy
 
             outfile.write(category+','+','.join(line_str)+'\n')
 
+def evaluate_per_category(system_paths, gold_path, data):
 
-if __name__ == '__main__':
-
-
-
-    gold_path = '../results/gold-test.txt'
-    #system_path = '../results/embeddings_baseline.txt'
-    #system_path = '../results/wn_sim.txt'
-
-    system_paths = glob.glob('../results/*.txt')
-    annotations_path = '../annotated_properties/properties-annotated-corrected.txt'
-    print(system_paths)
-
-
+    if not os.path.isdir('categories'):
+        os.mkdir('categories')
 
     for system_path in system_paths:
         print(system_path)
         system_name = system_path.split('/')[-1].rstrip('.txt')
-        error_analysis_path = 'error_analysis_'+system_name+'.csv'
+        error_analysis_path = 'categories/cat_'+system_name+'.txt'
 
         cateogry_cases_to_file(gold_path, system_path, annotations_path, error_analysis_path)
+
+
+
+
+if __name__ == '__main__':
+
+
+    data = sys.argv[1]
+
+    gold_path = '../data/'+data+'.txt'
+    system_paths = glob.glob('../results/*.txt')
+    annotations_path = '../attribute_annotation/attributes-validation.txt'
+
+    evaluate_per_category(system_paths, gold_path, data)

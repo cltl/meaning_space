@@ -38,9 +38,12 @@ def decisions_to_file(triples_test, decision_dicts, name, labels = False):
 
     # I don't know how many and what items are in the dict, so I sort the
     # keys alphabetically and then write them
+
+    if not os.path.isdir('../evaluation/decisions'):
+        os.mkdir('../evaluation/decisions')
     names = sorted(decision_dicts[0].keys())
 
-    with open('../evaluation/'+name+'.txt', 'w') as outfile:
+    with open('../evaluation/decisions/'+name+'.txt', 'w') as outfile:
         outfile.write('concept1,concept2,attribute'+','+','.join(names)+'\n')
 
         for triple, decision_dict in zip(triples_test, decision_dicts):
@@ -78,7 +81,7 @@ def error_analysis_file(triples_test, labels_test, answers, decisions, name):
 
 def load_positive_negative_triples(data):
 
-    with open('../DiscriminAtt/training/'+data+'.txt') as infile:
+    with open('../data/'+data+'.txt') as infile:
 
         triples = [line.split(',') for line in infile.read().strip().split('\n')]
 

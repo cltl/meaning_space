@@ -2,4 +2,6 @@
 
 model/movies.bin
 results/*
-evaluation/*.txt
+evaluation/results-summary*.txt
+evaluation/decisions/*
+evaluation/categories/*
