@@ -9,8 +9,19 @@ def load_triples(data, return_labels = False):
     triples = []
     labels = []
 
-    with open('../data/'+data+'.txt') as infile:
-        lines =[line.split(',') for line in infile.read().strip().split('\n')]
+    if data != 'train_val':
+        with open('../data/'+data+'.txt') as infile:
+            lines =[line.split(',') for line in infile.read().strip().split('\n')]
+
+    elif data == 'train_val':
+        with open('../data/train.txt') as infile:
+            lines_t =[line.split(',') for line in infile.read().strip().split('\n')]
+
+        with open('../data/validation.txt') as infile:
+            lines_v =[line.split(',') for line in infile.read().strip().split('\n')]
+
+            lines = lines_t + lines_v
+
 
     for line in lines:
         if len(line) == 4:
@@ -22,6 +33,9 @@ def load_triples(data, return_labels = False):
         return triples, labels
     else:
         return triples
+
+
+
 
 
 def results_to_file(triples_test, answers, name):

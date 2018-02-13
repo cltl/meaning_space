@@ -57,9 +57,9 @@ def full_def_embedding_sub_system(data_train, data_test, threshold1, threshold2,
             decision_dicts.append(def_sim_decision_dict)
         else:
             sub_decision_dict = dict()
-            sub_decision_dict['depths_concept1'] = '-'
-            sub_decision_dict['level'] = '-'
-            sub_decision_dict['decision_depth'] = '-'
+            #sub_decision_dict['depths_concept1'] = '-'
+            #sub_decision_dict['level'] = '-'
+            #sub_decision_dict['decision_depth'] = '-'
             sub_decision_dict['system'] = 'sub'
             sub_decision_dict['answer'] = str(prediction)
             sub_answer = str(prediction)
@@ -83,7 +83,8 @@ if __name__ == '__main__':
     data_test = sys.argv[2]
 
     # replace this with the path to your the word2vec model
-    model_path = '../model/movies.bin'
+    #model_path = '../model/movies.bin'
+    model_path = '../../../Data/word2vec/GoogleNews-vectors-negative300.bin'
     model = load_model(model_path)
 
 

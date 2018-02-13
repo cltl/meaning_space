@@ -111,7 +111,8 @@ def analyze_distinction_levels(system_name):
     # Write stats to file
     with open('wordnet_distinction_level/stats_'+system_name+'.txt', 'w') as outfile:
         for k, v in overall_stats.items():
-            outfile.write(k+','+str(v)+'\n')
+            if k != 'depth_diff_sum':
+                outfile.write(k+','+str(v)+'\n')
 
 
 

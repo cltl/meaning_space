@@ -66,7 +66,8 @@ if __name__ == '__main__':
         os.mkdir('../results')
 
     # replace this with the path to your the word2vec model
-    model_path = '../model/movies.bin'
+    #model_path = '../model/movies.bin'
+    model_path = '../../../Data/word2vec/GoogleNews-vectors-negative300.bin'
     model = load_model(model_path)
 
     hidden_layer = (1,1)
