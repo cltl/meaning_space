@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import os
-from calculate_differences import compare_performances
+from calculate_differences import compare_performances, get_most_frequent_categories
 # Systems: in files starting with 'error_analysis_'
 # Performance per category: in 'error_analysis_system.csv' file:
     # column1: category
@@ -76,14 +76,17 @@ if __name__ == '__main__':
 
     #list_systems = glob.glob('error_analysis*.csv')[:3]
 
-    list_systems = ['def_baseline_toy', 'embedding_sim_baseline_toy', ]
+    list_systems = ['baseline_sim_validation', 'baseline_subtraction_validation', ]
     #list_systems = ['embeddings_baseline', 'analogy-scaled_mlp_emb_rev1-1-logistic']
     # Wordnet constraint systems in isolation:
     #list_systems = [f.lstrip('error_analysis_').split('.')[0] for f in glob.glob('*wn_constraints_*.csv') if '-rev' in f]
     #list_categories = ['animate-bodypart_organ-object-part', 'material', 'appearance-color', 'event', 'animate-gender-object-person', 'magnitude-size', 'appearance-duration-magnitude-shape']
-    cutoff = 0
-    list_categories = compare_performances(list_systems, cutoff)
+    cutoff = 10
+    n = 10
+    list_categories_diff = compare_performances(list_systems, cutoff)
+    list_categories_most_freq = get_most_frequent_categories(list_systems, n)
 
     name = '-vs-'.join(list_systems)+'-'+str(cutoff)
 
-    plot_performances(list_systems, list_categories, name)
+    plot_performances(list_systems, list_categories_diff, name+'-diff')
+    plot_performances(list_systems, list_categories_most_freq, name+'-freq')

@@ -59,6 +59,14 @@ def subtract(word1, word2, model):
     return vec_result
 
 
+def check_vocab(word_list, model):
+
+    if all([word in model.vocab for word in word_list]):
+        return True
+    else:
+        return False
+
+
 def sim_wv(wv1, wv2, model):
 
     """
@@ -72,65 +80,47 @@ def sim_wv(wv1, wv2, model):
     # Normalize vectors before calculating their dot product:
 
     if type(wv1) == str:
-        if wv1 in model.vocab:
-            vec1 = model[wv1]
-        else:
-            vec1 = 'OOV'
+        vec1 = model[wv1]
+
     else:
         vec1 = wv1
 
     if type(wv2) == str:
-        if wv2 in model.vocab:
-            vec2 = model[wv2]
-        else:
-            vec1 = 'OOV'
+        vec2 = model[wv2]
+
     else:
         vec2 = wv2
 
     # Only calculate sim if words in the model (i.e. not str 'OOV')
-    if (type(vec1) != str) and (type(vec2) != str):
-        vec1_unit = unit_vector(vec1)
-        vec2_unit = unit_vector(vec2)
-        sim_vec = np.dot(vec1_unit, vec2_unit)
-    else:
-        sim_vec = 0.0
+
+    vec1_unit = unit_vector(vec1)
+    vec2_unit = unit_vector(vec2)
+    sim_vec = np.dot(vec1_unit, vec2_unit)
+
 
     return sim_vec
 
 
+def sim(word1, word2, model):
+
+    sim = model.similarity(word1, word2)
+
+    return sim
 
 
 
-def nearest_neighbors_subtracted(word1, word2, model):
+def sim_subtraction(word1, word2, word3, model):
 
-    if (word1 in model.vocab) and (word2 in model.vocab):
-        sub_vec = subtract(word1, word2, model)
-        neighbors = model.similar_by_vector(sub_vec, topn = 10, restrict_vocab=None)
+    if (word1 in model.vocab) and (word2 in model.vocab) and (word3 in model.vocab):
+
+        sub_vec = unit_vector(subtract(word1, word2, model))
+        word3_vec = unit_vector(model[word3])
+
+        sim_sub = np.dot(sub_vec, word3_vec)
     else:
-        neighbors = [('-', '-')]
+        sim_sub = 0.0
 
-    return neighbors
-
-
-def highest_sim_word_list(word, word_list, model):
-
-    sims = []
-
-    if word in model.vocab:
-
-        for w in word_list:
-
-            if w in model.vocab:
-
-                sim = sim_wv(word, w, model)
-                sims.append((sim, w))
-    if sims:
-        return max(sims)
-    else:
-        return (0.0, '-')
-
-
-
+    return sim_sub
 
 
 if __name__ == '__main__':
@@ -139,6 +129,14 @@ if __name__ == '__main__':
 
     model_path = '../model/movies.bin'
     model = load_model(model_path)
+
+    word_list1 = ['star', 'moon', 'man']
+    word_list2 = ['star', 'man', 'gfdsdf']
+
+    answer = check_vocab(word_list1, model)
+    print(answer)
+    answer = check_vocab(word_list2, model)
+    print(answer)
 
     test_word1 = 'star'
     test_word2 = 'actor'
@@ -153,13 +151,17 @@ if __name__ == '__main__':
     print('sim1: ', sim1)
     print('sim2: ', sim2)
 
+    sim1a, sim2a = embedding_sim('star', 'moon', 'actor', model)
+
+    print('\n are the sim calculations the same?')
+    print('Are they the same?', sim1, sim1a)
     # check if highest_sim_word_list works:
 
     word = 'actor'
     word_list = ['actress', 'star', 'director', 'red']
 
-    highest_sim_word = highest_sim_word_list(word, word_list, model)
-    print('highest sim with "actor": ', highest_sim_word)
+    #highest_sim_word = highest_sim_word_list(word, word_list, model)
+    #print('highest sim with "actor": ', highest_sim_word)
 
     # test if model is loaded in the correct format:
 

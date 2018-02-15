@@ -23,59 +23,18 @@ def direct_def_check(concept1, concept2, prop):
     def1_answer = 0
     def2_answer = 0
 
-    syns_concept1 = get_all_synsets(concept1)
-    syns_concept2 = get_all_synsets(concept2)
-
-
-    decision_dict['decision1_syn'] = '-'
-    decision_dict['decision2_syn'] = '-'
-    decision_dict['concept1_syn'] = '-'
-    decision_dict['concept2_syn'] = '-'
-    decision_dict['system'] = 'def'
 
     for syn1, def1 in def_dict1.items():
 
         if prop in def1:
 
             def1_answer = 1
-            decision_dict['decision1_syn'] = str(syn1)
-
-            # check if the decision was taken at the level of the synsets of concept1
-            # this is the case, if the decision synsets is one of the syns of concept1
-            # in this case, it is not necessary to find the hyponym of the decision synset
-            # in order to calculate the depth difference later
-            if syn1 in syns_concept1:
-                decision_dict['concept1_syn'] = str(syn1)
-
-                break
-            else:
-                for syn_concept1 in syns_concept1:
-                    if check_if_syn_in_hyponyms(syn_concept1, syn1):
-                        decision_dict['concept1_syn'] = str(syn_concept1)
-                        break
-                    else:
-                        decision_dict['concept1_syn'] = 'pos_dec_syn_is_'+str(syn1.pos())
-
-
+            break
 
     for syn2, def2 in def_dict2.items():
         if prop in def2:
             def2_answer = 1
-            decision_dict['decision2_syn'] = str(syn2)
-
-            decision_dict['decision2_syn'] = str(syn2)
-            # check if the decision was taken at the level of the synsets of concept1
-            # this is the case, if the decision synsets is one of the syns of concept1
-            # in this case, it is not necessary to find the hyponym of the decision synset
-            # in order to calculate the depth difference later
-            if syn2 in syns_concept2:
-                decision_dict['concept2_syn'] = str(syn2)
-                break
-            else:
-                for syn_concept2 in syns_concept2:
-                    if check_if_syn_in_hyponyms(syn_concept2, syn2):
-                        decision_dict['concept2_syn'] = str(syn_concept2)
-                        break
+            break
 
 
     if (def1_answer == 1) and (def2_answer == 0):
@@ -91,6 +50,7 @@ def direct_def_check(concept1, concept2, prop):
         answer = None
 
     decision_dict['answer'] = answer
+    decision_dict['system'] = 'def'
 
     return decision_dict
 
@@ -101,7 +61,7 @@ def def_baseline(data):
     triples = load_triples(data)
     answers = []
     decision_dicts = []
-    name = 'def_baseline_'+data
+    name = 'baseline_definitions_'+data
 
 
     for triple in triples:

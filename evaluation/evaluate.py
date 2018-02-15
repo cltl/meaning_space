@@ -2,29 +2,24 @@ import glob
 import sys
 
 def load_data(data_file):
-    """
-    Input: path to a file containing triples and answers
-    Output: a list of lists for each line in the file:
-    concept1, concept2, attribute, answer
-    """
     # load gold data or system output
     with open(data_file) as infile:
 
         answers = [line.split(',')[3] for line in infile.read().strip().split('\n')]
+        #triples = [(line.split(',')[0]) for line in infile.read().strip().split('\n')]
 
     return answers
 
+def load_triples(data_file):
+    # load gold data or system output
+    with open(data_file) as infile:
 
+        triples = [line.split(',')[:3] for line in infile.read().strip().split('\n')]
+        #triples = [(line.split(',')[0]) for line in infile.read().strip().split('\n')]
 
-def f1_score(system_answers, gold_answers):
+    return triples
 
-    """
-    Function to calculate the f1-average (based on the evaluation script provided
-    by the task organizers)
-    Input: system_answers (list), gold_answers(list)
-    Output: A dictionary containing:
-    f1-average, precision (positive), recall (positive)
-    """
+def f1_score(system_answers, gold_answers, system_triples, gold_triples):
 
     f1_positives = 0
     f1_negatives = 0
@@ -44,8 +39,7 @@ def f1_score(system_answers, gold_answers):
 
     # sanity check2 - make sure the triples are identical
 
-    system_triples = [triple[:3] for triple in system_answers]
-    gold_triples = [triple[:3] for triple in system_answers]
+
 
     if system_triples == gold_triples:
 
@@ -89,29 +83,47 @@ def f1_score(system_answers, gold_answers):
     else:
         return None
 
-
-
-def evaluate_sort(data):
-
-    """
-    Evaluate all results on a specific data set and write the results
-    to 'results-summary-[data]'
-    Input: name of evaluation set (str)
-    """
+def evaluate(data):
 
     gold_answers = load_data('../data/'+data+'.txt')
 
+    with open('results-summary-'+data+'.txt', 'w') as outfile:
+
+        for results_file in glob.glob('../results/*'+data+'.txt'):
+
+            print(results_file)
+            system_answers = load_data(results_file)
+
+
+            system_name = results_file.split('/')[-1].rstrip('.txt')
+
+            results = f1_score(system_answers, gold_answers)
+
+            if results != None:
+
+                for res, val in results.items():
+                    print(res, val)
+
+                outfile.write(system_name+','+str(results['Precision'])+','+str(results['Recall'])+','+str(results['F1-average'])+'\n')
+
+def evaluate_sort(data):
+
+    gold_answers = load_data('../data/'+data+'.txt')
+    gold_triples = load_triples('../data/'+data+'.txt')
+
     results_list = []
+
 
     for results_file in glob.glob('../results/*'+data+'.txt'):
 
         print(results_file)
         system_answers = load_data(results_file)
+        system_triples = load_triples(results_file)
 
 
-        system_name = results_file.split('/')[-1].rstrip('.txt')
+        system_name = results_file.split('/')[-1].rstrip('.txt').replace('_', '-')
 
-        results = f1_score(system_answers, gold_answers)
+        results = f1_score(system_answers, gold_answers, system_triples, gold_triples)
 
         if results != None:
 
@@ -121,15 +133,61 @@ def evaluate_sort(data):
                 f1 = 0.0
 
             results_list.append((f1, [system_name, str(results['Precision']), str(results['Recall']), str(results['F1-average'])]))
+        else:
+            results_list.append((0.0, [system_name, '-', '-', '-']))
+
+    return sorted(results_list, reverse = True)
+
+
+
+def results_to_file(results_list):
 
     with open('results-summary-'+data+'.txt', 'w') as outfile:
 
-        for results in sorted(results_list, reverse = True):
+        for results in results_list:
+
             line_list = results[1]
-            #print(line_list[0])
+
             line_str = ','.join(line_list)
 
             outfile.write(line_str+'\n')
+
+
+
+def results_to_table(results_list):
+
+
+
+    print('\\begin{center}')
+    print('\\begin{table}')
+    print('\\begin{tabular}{| l | l | l | l |}')
+    print('\\hline')
+    print('System & Precision & Recall & F1-average \\\ \hline')
+    print('\\hline')
+    print(' &  &  & \\\ \hline')
+
+    for results in sorted(results_list, reverse = True):
+        line_list = results[1]
+
+
+        line_list_rounded = []
+
+        for n, r in enumerate(line_list):
+            if n != 0:
+                line_list_rounded.append(str(round(float(r), 2)))
+            else:
+                line_list_rounded.append(r)
+
+
+
+        line_str = '&'.join(line_list_rounded)
+        print(line_str+'\\\ \hline')
+
+
+    print('\\end{tabular}')
+    print('\\caption{Performance overview.}')
+    print('\\end{table}')
+    print('\\end{center}')
 
 
 
@@ -137,4 +195,6 @@ def evaluate_sort(data):
 if __name__ == '__main__':
 
     data = sys.argv[1]
-    evaluate_sort(data)
+    results_list = evaluate_sort(data)
+    results_to_file(results_list)
+    results_to_table(results_list)

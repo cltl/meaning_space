@@ -1,5 +1,5 @@
 import sys
-from embeddings import load_model, sim_wv, subtract
+from embeddings import load_model, sim_wv, subtract, check_vocab
 from utils import load_triples, results_to_file, decisions_to_file
 from classification import scale_training_test_features, train_classifier
 from classification import test_classifier
@@ -28,8 +28,10 @@ def extract_features(triples, model):
         concept1 = triple[0]
         concept2 = triple[1]
         prop = triple[2]
-
-        features.append([get_sim_subtracted(concept1, concept2, prop, model)])
+        if check_vocab([concept1, concept2, prop], model):
+            features.append([get_sim_subtracted(concept1, concept2, prop, model)])
+        else:
+            features.append([0.0])
 
     return features
 
@@ -39,7 +41,7 @@ def embedding_subtraction_classification_baseline(data_train, data_test, model, 
 
     hiddel_layer_str = '-'.join([str(l) for l in hidden_layer])
 
-    name = 'embedding_sub_cl_baseline_'+hiddel_layer_str+'_'+activation+'_'+data_test
+    name = 'baseline_subtraction_'+data_test
 
     triples_train, labels_train = load_triples(data_train, return_labels = True)
     triples_test = load_triples(data_test)

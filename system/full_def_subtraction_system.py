@@ -1,6 +1,6 @@
 import sys
-from embeddings import load_model, sim_wv, highest_sim_word_list
 from utils import load_triples, results_to_file, decisions_to_file
+from embeddings import load_model
 from wordnet import get_all_definitions
 from baseline_wordnet import direct_def_check
 from definitions_extended_system import sim_def_check
@@ -28,13 +28,17 @@ def full_def_embedding_sub_system(data_train, data_test, threshold1, threshold2,
 
     x_train_scaled, x_test_scaled = scale_training_test_features(x_train, x_test)
 
+    print('training classifier...')
     classifier = train_classifier(x_train_scaled, labels_train, hidden_layer, activation)
+    print('making predictions...')
+    predictions = test_classifier(classifier, x_test_scaled)
 
-    predictions = test_classifier(classifier, x_train_scaled)
 
+    print('classifying triples')
 
+    total = len(triples_test)
 
-    for triple, prediction in zip(triples_test, predictions):
+    for n, (triple, prediction) in enumerate(zip(triples_test, predictions)):
         concept1 = triple[0]
         concept2 = triple[1]
         prop = triple[2]
@@ -46,10 +50,10 @@ def full_def_embedding_sub_system(data_train, data_test, threshold1, threshold2,
         def_decision_dict = direct_def_check(concept1, concept2, prop)
         def_sim_decision_dict = sim_def_check(concept1, concept2, prop, threshold1, threshold2, model)
         def_answer = def_decision_dict['answer']
+        def_sim_answer = def_sim_decision_dict['answer']
 
 
         if def_answer != None:
-            print(def_answer)
             answers.append(def_answer)
             decision_dicts.append(def_decision_dict)
         elif def_sim_answer != None:
@@ -57,16 +61,16 @@ def full_def_embedding_sub_system(data_train, data_test, threshold1, threshold2,
             decision_dicts.append(def_sim_decision_dict)
         else:
             sub_decision_dict = dict()
-            #sub_decision_dict['depths_concept1'] = '-'
-            #sub_decision_dict['level'] = '-'
-            #sub_decision_dict['decision_depth'] = '-'
             sub_decision_dict['system'] = 'sub'
             sub_decision_dict['answer'] = str(prediction)
             sub_answer = str(prediction)
             answers.append(sub_answer)
             decision_dicts.append(sub_decision_dict)
+        status = n/total
+        if n in range(0, total, 10):
+            print(status, ' of the test data classified ')
 
-
+    print('writing results to file')
     print('len data ', len(triples_test))
     print('len answers ', len(answers))
     results_to_file(triples_test, answers, name)

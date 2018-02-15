@@ -1,17 +1,25 @@
 import sys
-from embeddings import load_model, sim_wv, highest_sim_word_list
+from embeddings import load_model, sim_wv
 from utils import load_triples, results_to_file, decisions_to_file
 from wordnet import get_all_definitions, get_syn_depth, get_syns_depths
-from wordnet import get_all_synsets
+from wordnet import get_all_synsets, check_if_syn_in_hyponyms
 import os
 
 def sim_definition(prop, definition, model):
 
-    # flat_list = [item for sublist in l for item in sublist]
-
-    def_sim = highest_sim_word_list(prop, definition, model)
-
-    return def_sim
+    #flat_list = [item for sublist in l for item in sublist]
+    #definition_list = definition_dict.values()
+    #definitions = [w for definition in definition_list for w in definition]
+    sims = []
+    for word in definition:
+        if (word in model.vocab) and (prop in model.vocab):
+            sims.append((sim_wv(word, prop, model)))
+        else:
+            sims.append(0.0)
+    if sims:
+        return max(sims)
+    else:
+        return 0.0
 
 
 
@@ -21,7 +29,7 @@ def get_highest_def_sim(prop, definition_dict, model):
 
     for syn, definition in definition_dict.items():
 
-        max_sim = highest_sim_word_list(prop, definition, model)[0]
+        max_sim = float(sim_definition(prop, definition, model))
 
         sim_syn_list.append((max_sim, syn))
 
@@ -45,15 +53,10 @@ def sim_def_check(concept1, concept2, prop, threshold1, threshold2, model):
     def_dict1 = get_all_definitions(concept1)
     def_dict2 = get_all_definitions(concept2)
 
-    def1_answer = 0
-    def2_answer = 0
 
-    syns_concept1 = get_all_synsets(concept1)
 
-    decision_dict['depths_concept1'] = ' '.join([str(d) for d in get_syns_depths(syns_concept1)])
-    decision_dict['level'] = '-'
-    decision_dict['decision_depth'] = '-'
-    decision_dict['system'] = 'def-sim'
+    decision_dict['system'] = 'def_sim'
+
 
     def_sim1, syn1 = get_highest_def_sim(prop, def_dict1, model)
     def_sim2, syn2 = get_highest_def_sim(prop, def_dict2, model)
@@ -61,23 +64,26 @@ def sim_def_check(concept1, concept2, prop, threshold1, threshold2, model):
 
     if (def_sim1 > threshold1) and (def_sim2 < threshold2):
         answer = '1'
-        if syn1 in syns_concept1:
-            decision_dict['level'] = 'synset'
-        else:
-            decision_dict['level'] = 'hypernym'
-        decision_dict['decision_depth'] = get_syn_depth(syn1)
+
 
 
     elif (def_sim1 > threshold1) and (def_sim2 > threshold2):
         answer = '0'
 
-    elif (def_sim1 < threshold1) and (def_sim2 > threshold2):
+
+    elif (def_sim1 < threshold2) and (def_sim2 > threshold1):
         answer = '0'
+
+    elif (def_sim1 < threshold2) and (def_sim2 < threshold2):
+        answer = '0'
+
 
     else:
         answer = None
 
     decision_dict['answer'] = answer
+
+
 
     return decision_dict
 
@@ -88,17 +94,15 @@ def def_extended_system(data, threshold1, threshold2, model):
     triples = load_triples(data)
     answers = []
     decision_dicts = []
-    name = 'def_extended_'+str(threshold1)+'-'+str(threshold2)+'_'+data
+    name = 'def_extended_'+data
 
-
-    for triple in triples:
+    total = len(triples)
+    for n, triple in enumerate(triples):
         concept1 = triple[0]
         concept2 = triple[1]
         prop = triple[2]
 
-        def_answer = None
-
-        def_decision_dict = sim_def_check(concept1, concept2, prop, threshold1, threshold2)
+        def_decision_dict = sim_def_check(concept1, concept2, prop, threshold1, threshold2, model)
         decision_dicts.append(def_decision_dict)
         def_answer = def_decision_dict['answer']
 
@@ -106,6 +110,10 @@ def def_extended_system(data, threshold1, threshold2, model):
             answers.append(def_answer)
         else:
             answers.append('0')
+
+        if n in range(0, total, 50):
+            status = n/total
+            print(status, ' of the test data classified ')
 
 
     print('len data ', len(triples))
@@ -127,10 +135,10 @@ if __name__ == '__main__':
     #model_path = '../model/movies.bin'
     model_path = '../../../Data/word2vec/GoogleNews-vectors-negative300.bin'
     model = load_model(model_path)
-    prop = 'shine'
-    definition_dict = get_all_definitions('star')
-    highest_sim_syn = get_highest_def_sim(prop, definition_dict, model)
-    print(highest_sim_syn)
+    #prop = 'shine'
+    #definition_dict = get_all_definitions('star')
+    #highest_sim_syn = get_highest_def_sim(prop, definition_dict, model)
+    #print(highest_sim_syn)
 
     threshold1 = 0.75
     threshold2 = 0.23
