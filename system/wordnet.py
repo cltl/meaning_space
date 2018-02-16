@@ -50,6 +50,10 @@ def get_all_hypernyms(word):
         for hyp in get_hypernyms(syn):
             if hyp not in all_syns_hypernyms:
                 all_syns_hypernyms.append(hyp)
+                for hyp2 in all_syns_hypernyms:
+                    for hyp3 in hyp2.hypernyms():
+                        if hyp3 not in all_syns_hypernyms:
+                            all_syns_hypernyms.append(hyp3)
 
     return all_syns_hypernyms
 

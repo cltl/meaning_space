@@ -32,8 +32,11 @@ def get_highest_def_sim(prop, definition_dict, model):
         max_sim = float(sim_definition(prop, definition, model))
 
         sim_syn_list.append((max_sim, syn))
+    if sim_syn_list:
+        return max(sim_syn_list)
+    else:
+        return (0.0, '-')
 
-    return max(sim_syn_list)
 
 
 
@@ -53,37 +56,23 @@ def sim_def_check(concept1, concept2, prop, threshold1, threshold2, model):
     def_dict1 = get_all_definitions(concept1)
     def_dict2 = get_all_definitions(concept2)
 
-
-
     decision_dict['system'] = 'def_sim'
 
+    sim1, syn1 = get_highest_def_sim(prop, def_dict1, model)
+    sim2, syn2 = get_highest_def_sim(prop, def_dict2, model)
 
-    def_sim1, syn1 = get_highest_def_sim(prop, def_dict1, model)
-    def_sim2, syn2 = get_highest_def_sim(prop, def_dict2, model)
 
-
-    if (def_sim1 > threshold1) and (def_sim2 < threshold2):
+    if (sim1 > threshold1) and (sim2 < threshold2):
         answer = '1'
-
-
-
-    elif (def_sim1 > threshold1) and (def_sim2 > threshold2):
+    elif (sim2 > threshold1) and (sim1 < threshold2):
         answer = '0'
-
-
-    elif (def_sim1 < threshold2) and (def_sim2 > threshold1):
+    elif (sim1 < threshold2) and (sim2 < threshold2):
         answer = '0'
-
-    elif (def_sim1 < threshold2) and (def_sim2 < threshold2):
+    elif (sim1 > threshold1) and (sim2 > threshold1):
         answer = '0'
-
-
-    else:
-        answer = None
+    else: answer = None
 
     decision_dict['answer'] = answer
-
-
 
     return decision_dict
 
