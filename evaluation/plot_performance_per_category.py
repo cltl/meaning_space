@@ -28,6 +28,8 @@ def get_performance(list_systems, list_categories):
     systems = []
 
     for system_name in list_systems:
+        system_name = system_name.replace('-', '_')
+        print(system_name)
 
         system = 'categories/cat_'+system_name+'.txt'
 
@@ -76,7 +78,10 @@ if __name__ == '__main__':
 
     #list_systems = glob.glob('error_analysis*.csv')[:3]
 
-    list_systems = ['baseline_sim_validation', 'baseline_subtraction_validation', ]
+    #list_systems = ['baseline_sim_validation', 'baseline_subtraction_validation', ]
+    #list_systems = ['baseline_sim_validation', 'baseline-definitions-validation', ]
+    list_systems = ['baseline-subtraction-validation', 'baseline-definitions-validation', ]
+    #list_systems = ['baseline_sim_validation', 'baseline-subtraction-validation', 'baseline-definitions-validation' ]
     #list_systems = ['embeddings_baseline', 'analogy-scaled_mlp_emb_rev1-1-logistic']
     # Wordnet constraint systems in isolation:
     #list_systems = [f.lstrip('error_analysis_').split('.')[0] for f in glob.glob('*wn_constraints_*.csv') if '-rev' in f]

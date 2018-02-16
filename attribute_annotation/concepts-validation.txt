@@ -1,4 +1,4 @@
-seal	animal	event	part	animate	object
+seal	animal	activity	part	animate	object
 turnip	plant	vegetable	food	object	animate
 dish	object	food
 sandwiches	food	object
@@ -6,7 +6,7 @@ fridge	device	object	container
 beets	plant	vegetable	food	object	animate
 firewood	material	object
 horse	animal	animate	object
-gorges	landscape	event	location
+gorges	landscape	activity	location
 butter	food	material
 kidneys	part	bodypart_organ	object	animate
 sled	vehicle	object
@@ -15,9 +15,9 @@ clarinets	instrument	object
 crow	bird	animal	animate	object
 hammer	tool	object
 olive	fruit	plant	tree	food	object	animate
-shower	event	object	location
+shower	activity	object	location
 cello	instrument	object
-dinner	event	time	food
+dinner	activity	time	food
 roof	part	location	building	object
 oak	tree	plant	animate	object
 fuel	substance
@@ -88,7 +88,7 @@ bathtub	object	location	container
 wrist	part	bodypart_organ	object	animate
 nose	part	bodypart_organ	object	animate
 lake	landscape	location
-tune	event	art
+tune	activity	art
 fingers	part	bodypart_organ	object	animate
 cigarettes	object
 rubber	material
@@ -148,14 +148,14 @@ maid	status	gender	person	animate	object
 ocean	landscape	location
 hallway	building	part	location	object
 congressman	profession	status	person	animate	object
-dinners	event	food	time
+dinners	activity	food	time
 houses	building	object
 naturalist	quality
 asparagus	food	vegetable	plant	object	animate
-supper	food	event	time
+supper	food	activity	time
 skillet	tool	container	object
 vehicle	category	object
-grooms	relationship	gender	person	event	animate	object
+grooms	relationship	gender	person	activity	animate	object
 building	category	location	building	object
 lawyer	profession	person	animate	object
 yacht	vehicle	object
@@ -168,7 +168,7 @@ sword	weapon	object
 bowl	container	object
 groomsmen	relationship	gender	person	animate	object
 afternoon	time	part	object
-lunch	food	event	time
+lunch	food	activity	time
 minicab	vehicle	object
 niece	relationship	gender	person	animate	object
 dishwasher	device	object
@@ -194,7 +194,7 @@ crocodile	animal	animate	object
 cauliflower	vegetable	plant	object	food	animate
 snow	material	phenomenon
 creatures	category
-bath	event
+bath	activity
 elk	animal	animate	object
 pie	food	bird	animal	animate	object
 frog	animal	animate	object
@@ -213,7 +213,7 @@ tornado	phenomenon
 milk	substance	food
 raccoon	animal	animate	object
 sardine	animal	food	animate	object
-request	event
+request	activity
 violin	instrument	object
 bridge	building	location	object
 teenager	age	person	animate	object
@@ -269,8 +269,8 @@ river	landscape	location
 teacher	profession	person	animate	object
 bridesmaids	relationship	gender	person	animate	object
 flamingo	bird	animal	animate	object
-groom	event	relationship	gender	person	animate	object
-films	event	device	object
+groom	activity	relationship	gender	person	animate	object
+films	activity	device	object
 turtle	animal	animate	object
 borzoi	dog	animal	animate	object
 cockroach	animal	 insect	animate	object
@@ -321,7 +321,7 @@ canyon	landscape	location
 machete	tool	weapon	object
 mouse	animal	animate	object
 man	gender	person	age	animate	object
-meal	food	event
+meal	food	activity
 deputy	profession	person	animate	object
 sleet	weather	phenomenon
 co-star	profession	person	animate	object
@@ -342,7 +342,7 @@ pot	container	object
 detectives	profession	person	animate	object
 finger	part	bodypart_organ	object	animate
 dresser	furniture	object	container
-lunches	food	event
+lunches	food	activity
 judge	profession	person	animate	object
 girlfriend	relationship	gender	person	animate	object
 facade	part	object
@@ -401,7 +401,7 @@ faucet	part	device	object
 sandals	worn	object
 saturn	plant	object	animate
 introit	part	object
-stick	weapon	tool	object	event
+stick	weapon	tool	object	activity
 terrier	dog	animal	animate	object
 froth	material
 chocolate	food	substance
@@ -480,11 +480,11 @@ chemist	specialist	profession	person	animate	object
 babies	age	person	animate	object
 mothers	relationship	gender	age	person	animate	object
 minibus	vehicle	object
-christmas	time	event
+christmas	time	activity
 rice	food	plant	animate	object
 island	location	landscape
 squirrel	animal	animate	object
-graduates	person	event	animate	object
+graduates	person	activity	animate	object
 pipe	tool	shape	object	part	appearance	container
 foliage	material	part	object
 ring	shape	object	appearance	worn	appearance
@@ -510,7 +510,7 @@ dove	bird	animal	animate	object
 jesuit	religion	person	animate	object
 songwriter	profession	person	animate	object
 republican	person	animate	object
-tape	device	object	event
+tape	device	object	activity
 chicken	animal	food	animate	object
 zucchini	vegetable	food	plant	object	animate
 lion	animal	animate	object
@@ -579,7 +579,7 @@ day	time
 cheeks	part	bodypart_organ	object	animate
 raisins	food
 urologist	specialist	profession	person	animate	object
-breakfast	food	event	time
+breakfast	food	activity	time
 wagon	vehicle	object
 liquor	substance	food
 flooring	furniture	part	object
@@ -602,7 +602,7 @@ belt	worn	object
 guitar	instrument	object
 viscose	material
 pheasant	bird	animal	animate	object
-speech	event	abstract_concept	text
+speech	activity	abstract_concept	text
 entrepreneur	profession	person	animate	object
 roofs	building	part	object
 lip	part	bodypart_organ	object	animate
@@ -610,13 +610,13 @@ pan	container	object
 fog	weather	phenomenon
 jupiter	tree	plant	animate	object
 train	vehicle	object
-showers	device	event	object
+showers	device	activity	object
 lord	status	gender	person	animate	object
 midwife	profession	person	animate	object
 bike	vehicle	object
 trolley	container	object
 tequila	substance	food
-roast	food	quality	event
+roast	food	quality	activity
 pane	object	part
 dentist	profession	person	animate	object
 bear	animal	animate	object
@@ -636,7 +636,7 @@ cotton	material	plant	animate	object
 eyelid	part	bodypart_organ	object	animate
 beach	landscape	location
 ligament	part	bodypart_organ	object	animate
-graduate	person	event	animate	object
+graduate	person	activity	animate	object
 walrus	animal	animate	object
 mists	weather	phenomenon
 heir	status	person	animate	object
@@ -650,7 +650,7 @@ cassette	device	object
 lambs	animal	food	animate	object
 clarinet	instrument	object
 tin	container	object	material	substance
-ushers	profession	person	event	animate	object
+ushers	profession	person	activity	animate	object
 cabins	building	object
 bathroom	building	location	part	object
 knees	part	bodypart_organ	object	animate
@@ -677,7 +677,7 @@ pharmacist	profession	person	animate	object
 tunnels	building	location	shape	appearance	object
 lamb	animal	food	animate	object
 cabbage	vegetable	plant	food	object	animate
-chain	object	event
+chain	object	activity
 ceo	status	profession	person	animate	object
 cow	animal	animate	object
 broom	tool	object

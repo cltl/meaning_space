@@ -12,9 +12,12 @@ def get_cat_performances(list_systems, cutoff):
 
     for system_name in list_systems:
 
+        system_name = system_name.replace('-', '_')
+        print(system_name)
         system = 'categories/cat_'+system_name+'.txt'
+
         cat_dict = dict()
-        #names.append(system.lstrip('error_analysis').rstrip('.csv'))
+
         with open(system) as infile:
             for line in infile.read().strip().split('\n')[1:]:
 
@@ -41,6 +44,8 @@ def get_most_frequent_categories(list_systems, n):
 
 
     system_name = list_systems[0]
+    system_name = system_name.replace('-', '_')
+    print(system_name)
     system = 'categories/cat_'+system_name+'.txt'
     cat_freqs = []
 

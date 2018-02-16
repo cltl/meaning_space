@@ -2,28 +2,28 @@ branch	part	object
 art	category	abstract_concept
 gas	substance
 informative	quality
-bark	part	event	object
+bark	part	activity	object
 virgin	person	animate	object
-consume	event
+consume	activity
 juniper	plant	tree	animate	object
 bones	part	substance	object
 business	organization	location
 rodent	category	animal	animate	object
 storage	abstract_concept
-teach	event
+teach	activity
 octopus	animal	animate	object
 jaws	part	bodypart_organ	object	animate
 innocent	quality
 mental	quality
 unhealthy	quality
-make	event
+make	activity
 concrete	quality
 player	person	animate	object
-smell	event	sensory perception
-shoots	event
-climb	event
+smell	activity	sensory perception
+shoots	activity
+climb	activity
 overcast	quality	weather
-fishing	event
+fishing	activity
 textile	quality	material
 tube	shape	object	tool	appearance
 steel	material
@@ -34,34 +34,34 @@ underground	location
 planet	object	category
 metal	material
 white	color	appearance
-arrest	event
-listen	event
+arrest	activity
+listen	activity
 armed	quality
 shop	location	organization	building	object
 salt	substance
 hired	quality
 grape	fruit	food	object
-bends	event
+bends	activity
 sand	material	substance
-driving	event
+driving	activity
 meat	material	food
 courtyard	location	building	organization	object
 ship	vehicle	object
-shoot	event
+shoot	activity
 ferocious	quality
 processor	part	object	device
 garden	location	landscape
 protein	substance
 dark	quality	appearance
 passengers	person	animate	object
-defend	event
+defend	activity
 stove	object	device
 makeshift	quality
 living	quality
 woven	material	quality
 anatomy	discipline
 parquet	material
-sleeps	event
+sleeps	activity
 lyrics	art	text	abstract_concept
 rounded	shape	appearance
 limb	part	bodypart_organ	object	animate
@@ -72,51 +72,51 @@ pebble	object
 sore	sensory perception
 brain	part	bodypart_organ	object	animate
 woman	person	gender	age	animate	object
-store	event	organization	location
+store	activity	organization	location
 follicle	part	bodypart_organ	object	animate
 windows	object	part
 civilian	person	animate	object
-hold	event
+hold	activity
 green	color	appearance
 light	quality	appearance
 chicken	animal	food	animate	object
 camp	location	building	organization	object
-entertain	event
-wound	event	location
+entertain	activity
+wound	activity	location
 parents	person	relationship	animate	object
 starchy	taste	sensory perception
 text	category	abstract_concept
 alcohol	substance	food
-extend	event
+extend	activity
 entangled	quality
-tape	event	object	device
-swallows	event
+tape	activity	object	device
+swallows	activity
 christian	quality	religion
 weak	quality
-lights	event	object
+lights	activity	object
 mainland	location	category
 tile	object	part
 cattle	animal 	category
 plant	category
-pray	event
-hunt	event
+pray	activity
+hunt	activity
 cartilage	material
 ball	object	shape	appearance
 fat	substance
-split	event
-listens	event
+split	activity
+listens	activity
 snack	food
 government	organization
 grilled	quality
 balm	material
 back	part	location	bodypart_organ	object	animate
 healthy	quality
-cure	event	abstract_concept
+cure	activity	abstract_concept
 exterior	location
 semicircular	shape	appearance
-close	event	location
-convict	event	person	animate	object
-talk	event
+close	activity	location
+convict	activity	person	animate	object
+talk	activity
 drunk	quality
 bar	location	organization	building	object
 adhesive	quality
@@ -132,51 +132,51 @@ shingles	object	part
 kids	person	age	animate	object
 remote	location	quality
 phalanx	object
-deal	event
+deal	activity
 average	quality	magnitude
 vulnerable	quality
 private	quality
-creates	event
-race	event	category
+creates	activity
+race	activity	category
 photo	object
 healthcare	organization	abstract_concept
 court	organization	location	building	object
 irish	quality	nationality	language
 tree	plant	category	animate	object
 freight	object	part
-cuts	event
+cuts	activity
 vehicle	category	object
 bulging	shape	appearance
-breath	event
+breath	activity
 record	object	abstract_concept
 tissue	material	part	bodypart_organ	object	animate
 band	organization	collection
-defense	event	abstract_concept
+defense	activity	abstract_concept
 newborn	person	age	animate	object
-walk	event
-graduate	person	event	animate	object
+walk	activity
+graduate	person	activity	animate	object
 greasy	quality
 university	location	organization	building	object
-digestion	event	process
+digestion	activity	process
 eggs	object
 archeology	discipline
 fish	animal	food	animate	object
-covers	event	object	part
+covers	activity	object	part
 official	person	quality	animate	object
-cook	event	person	animate	object
+cook	activity	person	animate	object
 still	quality	sensory perception
 racks	object	part
 baked	quality
 rails	object	part
-write	event
+write	activity
 romance	relationship
-helps	event
-open	quality	event
+helps	activity
+open	quality	activity
 electricity	phenomenon	abstract_concept
 itchy	quality	sensory perception
 keyboard	object	part	device
 slums	location
-chain	object	event
+chain	object	activity
 varnish	material
 canvas	object	material
 jellyfish	animal	animate	object
@@ -199,7 +199,7 @@ entrance	location	part	object
 bluish	color	appearance
 substance	category
 metallic	appearance
-wedding	event
+wedding	activity
 dairy	material	category
 mane	part	bodypart_organ	object	animate
 nose	part	bodypart_organ	object	animate
@@ -219,49 +219,49 @@ human	category
 housing	abstract_concept
 urine	substance
 law	abstract_concept
-command	event
+command	activity
 cotton	material	plant	animate	object
-heal	event
+heal	activity
 african	quality	nationality
 mouth	part	bodypart_organ	object	animate
 lipstick	worn	object
 movie	art
-decide	event
+decide	activity
 picture	object
 top	location	worn	object
 waistcoat	worn	object
-breastfeed	event
+breastfeed	activity
 female	gender	person	animate	object
 thigh	part	bodypart_organ	object	animate
 morning	time
-branches	part	event	object
-sound	sensory perception	event
+branches	part	activity	object
+sound	sensory perception	activity
 qualifications	abstract_concept
-runs	event
+runs	activity
 wood	material
 evening	time
 clay	material	substance
 rocks	object
 customer	person	animate	object
 window	object	part
-break	event
+break	activity
 misty	quality	weather
 orbit	shape	location	appearance
 diplomas	object	abstract_concept
 concave	shape	appearance
 jamaica	location
-transplant	event
+transplant	activity
 diploma	object	abstract_concept
 bus	vehicle	object
 mojito	food
-investigation	event
-hears	event	sensory perception
+investigation	activity
+hears	activity	sensory perception
 hammer	tool	object
 joint	part	object	bodypart_organ	animate
 grownup	person	age	animate	object
 people	category
 airplane	vehicle	object
-help	event
+help	activity
 adolescent	person	age	animate	object
 controlled	quality
 microfiber	material
@@ -271,7 +271,7 @@ cannons	object	weapon
 grey	color	appearance
 cockroach	insect	animal	animate	object
 flesh	material
-sting	event	sensory perception
+sting	activity	sensory perception
 columns	object	part
 bowels	part	bodypart_organ	object	animate
 pretty	quality
@@ -283,11 +283,11 @@ language	abstract_concept
 pouring	quality
 endings	time
 muscles	material	part	bodypart_organ	object	animate
-wear	event
+wear	activity
 glucose	substance
-childbirth	event
-stand	event
-interprets	event
+childbirth	activity
+stand	activity
+interprets	activity
 joints	part	bodypart_organ	object	animate
 song	text	art	genre
 instrumental	quality
@@ -298,28 +298,28 @@ man	person	gender	age	animate	object
 sharp	shape	appearance
 pores	shape	appearance
 plants	category
-create	event
+create	activity
 gifts	object	abstract_concept
 hemp	plant	material	animate	object
-marry	event
+marry	activity
 army	organization	collection
 pork	material	food
 gun	object	weapon
 geology	discipline
 sugarcane	part	object
 midday	time
-movement	event	category
+movement	activity	category
 milk	substance	food
 strings	object
 magazine	object	organization
 warm	quality	sensory perception
-publish	event
+publish	activity
 truck	vehicle	object
 leafy	quality
 sheet	object
 power	phenomenon	abstract_concept
 class	organization	abstract_concept
-stick	event	object	tool	weapon
+stick	activity	object	tool	weapon
 tail	part	bodypart_organ	object	animate
 foot	part	bodypart_organ	object	animate
 poetry	art	abstract_concept
@@ -328,103 +328,103 @@ autocratic	quality
 sweet	quality	taste	sensory perception
 nicotine	substance
 natural	quality
-contain	event
+contain	activity
 carbon	substance
 cinematography	art	abstract_concept
 royalty	quality	person	status	animate	object
 religion	category	abstract_concept
 winter	time
-meal	food	event
+meal	food	activity
 technical	quality
 educators	person	profession	animate	object
 location	category
-polish	event
+polish	activity
 christianity	religion
 male	person	gender	animate	object
 five	magnitude	number
-carry	event
-draw	event
-baptize	event
+carry	activity
+draw	activity
+baptize	activity
 stone	object	material
 cyclone	phenomenon	weather
-research	event
+research	activity
 school	location	organization	abstract_concept
 steep	shape	appearance
-labor	event	abstract_concept
-watch	event	person	animate	object
+labor	activity	abstract_concept
+watch	activity	person	animate	object
 omniscient	quality
-wash	event
+wash	activity
 addictive	quality
-surgery	event	discipline	location
+surgery	activity	discipline	location
 artistic	quality
-design	event	art	abstract_concept
+design	activity	art	abstract_concept
 sister	person	gender	relationship	animate	object
 nephew	person	gender	relationship	animate	object
 wool	material
 vegetable	category	plant	animate	object
 vessels	object	part	container	bodypart_organ	animate
-death	event
+death	activity
 skin	part	material	bodypart_organ	object	animate
-drive	event
+drive	activity
 stench	sensory perception
 doors	object	part	location
 books	object	text
-drink	event	food
+drink	activity	food
 cocoa	substance	food
-palpates	event
-sail	event	object	part
+palpates	activity
+sail	activity	object	part
 greek	quality	nationality	language
 drugs	substance
 thunder	phenomenon	part	weather	object
 bean	plant	part	food	vegetable	object	animate
-breakfast	event	time	food
-mature	quality	event
+breakfast	activity	time	food
+mature	quality	activity
 acid	substance
 catalysts	substance	abstract_concept
 romantic	quality	relationship
 umbilical	quality	location
 juicy	quality
 glass	material	object
-performs	event
+performs	activity
 vinegar	substance	food
 printed	quality
 psychoanalysis	discipline
 balustrade	object	part	building
 oral	quality	location
-war	event
+war	activity
 bandage	worn	object
-pinch	magnitude	quantity	event
+pinch	magnitude	quantity	activity
 elongated	shape	appearance
-digest	event
+digest	activity
 mathematics	discipline
-jump	event
-swallow	event
-send	event
-donates	event
+jump	activity
+swallow	activity
+send	activity
+donates	activity
 brass	material
 bad	quality
 acidic	quality	sensory perception	taste
 nobility	person	status	animate	object
-impersonates	event
-support	event	abstract_concept
+impersonates	activity
+support	activity	abstract_concept
 video	device	object
 bacteria	animal	animate	object
 concierge	person	profession	animate	object
 arm	part	object	bodypart_organ	animate
-fulfill	event
-bend	event
+fulfill	activity
+bend	activity
 bottom	location
-explodes	event
+explodes	activity
 iron	material
 column	object	part	building
 magnetic	quality	material
-act	event
+act	activity
 deep	shape	appearance
-eucharist	event
+eucharist	activity
 outdoors	location
-observe	event
-kill	event
-connects	event
+observe	activity
+kill	activity
+connects	activity
 fingers	part	bodypart_organ	object	animate
 digital	quality
 elastic	quality
@@ -436,24 +436,24 @@ bed	object	furniture
 snail	animal	animate	object
 theater	location	organization
 outdoor	location
-teaches	event
-notes	event	text
+teaches	activity
+notes	activity	text
 water	substance	landscape	location
-hear	event	sensory perception
+hear	activity	sensory perception
 tongue	part	bodypart_organ	object	animate
 road	location	landscape
-attacks	event
-strain	event	abstract_concept
-jumps	event
+attacks	activity
+strain	activity	abstract_concept
+jumps	activity
 classical	quality
-rotate	event
-hunting	event
+rotate	activity
+hunting	activity
 rooms	location	part	building	object
 deer	animal	animate	object
 round	shape	appearance
 pink	color	appearance
-kills	event
-clean	quality	event
+kills	activity
+clean	quality	activity
 backyard	location	part	building	object
 holy	quality
 daiquiri	food
@@ -471,7 +471,7 @@ colors	category
 parish	organization
 cells	part	bodypart_organ	object	animate
 tentacles	part	bodypart_organ	object	animate
-fly	event	animal	insect	animate	object
+fly	activity	animal	insect	animate	object
 seed	part	abstract_concept	object
 college	organization	location	building	object
 right	location	quality
@@ -479,33 +479,33 @@ office	location	organization	building	object
 bracelet	object
 players	person	part	animate	object
 periodical	object	organization	quality	time
-pull	event
-clucks	event	sensory perception	sound
+pull	activity
+clucks	activity	sensory perception	sound
 bathtub	object	container	location
-cut	event
+cut	activity
 depression	phenomenon
 genre	category	abstract_concept
 inelastic	quality
 monk	person	gender	profession	animate	object
-enforce	event
+enforce	activity
 customers	person	animate	object
-football	event	game
+football	activity	game
 coats	worn	object
-swims	event
+swims	activity
 puffy	quality	appearance
 vertical	orientation
 cold	quality	sensory perception
 apartment	location	part	building	object
-lunch	time	event	food
-leads	event
+lunch	time	activity	food
+leads	activity
 politics	discipline
-bite	event	sensory perception
-combat	event
+bite	activity	sensory perception
+combat	activity
 space	location
 linoleum	material
 secret	abstract_concept
-smells	event	sensory perception
-perform	event
+smells	activity	sensory perception
+perform	activity
 canister	object	container
 basket	object	container
 fast	quality
@@ -529,7 +529,7 @@ composed	quality
 spine	part	bodypart_organ	object	animate
 soda	food
 eyes	part	bodypart_organ	object	animate
-moves	event
+moves	activity
 shiny	quality	appearance
 polymer	material
 sun	object	phenomenon
@@ -539,16 +539,16 @@ royal	quality	status
 fabric	material
 bike	vehicle	object
 forest	location	collection
-congress	organization	event
+congress	organization	activity
 lover	person	relationship	animate	object
 wings	part	bodypart_organ	object	animate
 real	quality
 wheels	part	object
-load	event	object
-transforms	event
+load	activity	object
+transforms	activity
 retina	part	bodypart_organ	object	animate
-melt	event
-pads	event	object	worn
+melt	activity
+pads	activity	object	worn
 soldiers	person	profession	animate	object
 hands	part	object	bodypart_organ	animate
 patient	person	animate	object
@@ -556,22 +556,22 @@ sensitive	quality
 kitchen	location	part	building	object
 small	magnitude	size
 humans	category
-trek	event
+trek	activity
 pipes	object	part	tool
 orange	fruit	color	tree	object	appearance	plant	animate
 pedestrian	person	animate	object
-strangle	event
+strangle	activity
 train	vehicle	object
 information	abstract_concept
 alive	quality
 large	size	magnitude
 madmen	person	animate	object
-care	event
+care	activity
 cornea	part	bodypart_organ	object	animate
 kid	person	age	animate	object
 elbow	part	bodypart_organ	object	animate
 state	location	abstract_concept
 dense	quality	shape	appearance
-camping	event
+camping	activity
 twin	person	relationship	animate	object
 	

@@ -1,6 +1,7 @@
 import sys
 from embeddings import load_model, sim_wv
 from utils import load_triples, results_to_file, decisions_to_file
+from baseline_wordnet import direct_def_check
 from wordnet import get_all_definitions, get_syn_depth, get_syns_depths
 from wordnet import get_all_synsets, check_if_syn_in_hyponyms
 import os
@@ -77,13 +78,13 @@ def sim_def_check(concept1, concept2, prop, threshold1, threshold2, model):
     return decision_dict
 
 
-def def_extended_system(data, threshold1, threshold2, model):
+def def_extended_only_system(data, threshold1, threshold2, model):
 
 
     triples = load_triples(data)
     answers = []
     decision_dicts = []
-    name = 'def_extended_'+data
+    name = 'def_extended_only_'+data
 
     total = len(triples)
     for n, triple in enumerate(triples):
@@ -111,6 +112,42 @@ def def_extended_system(data, threshold1, threshold2, model):
     decisions_to_file(triples, decision_dicts, name)
 
 
+def def_check_extended_system(data, threshold1, threshold2, model):
+
+
+    triples = load_triples(data)
+    answers = []
+    decision_dicts = []
+    name = 'def_check_extended_'+data
+
+    total = len(triples)
+    for n, triple in enumerate(triples):
+        concept1 = triple[0]
+        concept2 = triple[1]
+        prop = triple[2]
+
+        def_decision_dict = direct_def_check(concept1, concept2, prop)
+        def_sim_decision_dict = sim_def_check(concept1, concept2, prop, threshold1, threshold2, model)
+        decision_dicts.append(def_decision_dict)
+        def_answer = def_decision_dict['answer']
+        def_sim_answer = def_sim_decision_dict['answer']
+
+
+        if def_answer:
+            answers.append(def_answer)
+        else:
+            answers.append('0')
+
+        if n in range(0, total, 50):
+            status = n/total
+            print(status, ' of the test data classified ')
+
+
+    print('len data ', len(triples))
+    print('len answers ', len(answers))
+    results_to_file(triples, answers, name)
+    decisions_to_file(triples, decision_dicts, name)
+
 
 if __name__ == '__main__':
 
@@ -132,4 +169,5 @@ if __name__ == '__main__':
     threshold1 = 0.75
     threshold2 = 0.23
 
-    def_extended_system(data, threshold1, threshold2, model)
+    #def_extended_only_system(data, threshold1, threshold2, model)
+    def_check_extended_system(data, threshold1, threshold2, model)
