@@ -58,6 +58,39 @@ def get_all_hypernyms(word):
     return all_syns_hypernyms
 
 
+def get_parts(synset):
+
+    all_parts = []
+
+    for mer in synset.part_meronyms():
+        all_parts.append(mer)
+    for mer in synset.substance_meronyms():
+        all_parts.append(mer)
+    for mer in synset.member_meronyms():
+        all_parts.append(mer)
+    return all_parts
+
+
+def get_all_meronyms(word):
+
+    all_parts = defaultdict(list)
+
+    all_syns = get_all_hypernyms(word)
+
+
+    for syn in all_syns:
+
+        for part in get_parts(syn):
+            for lemma in part.lemmas():
+                all_parts[syn].append(str(lemma.name()))
+            for subpart in get_parts(part):
+                for lemma in subpart.lemmas():
+                    all_parts[syn].append(str(lemma.name()))
+                    #all_parts.add(str(lemma.name()))
+
+
+    return all_parts
+
 
 def get_all_definitions(word):
 

@@ -5,16 +5,25 @@ import sys
 
 def load_synset(syn_str):
 
-    name = syn_str.split("'")[1]
+    name_list = syn_str.split("'")
 
-    syn = wn.synset(name)
+    if len(name_list) == 3:
+        name = name_list[1]
+
+        if len(name.split('.')) == 3:
+
+            syn = wn.synset(name)
+        else:
+            syn = None
+    else:
+        syn = None
 
     return syn
 
 
 def load_decisions(filepath):
 
-    decision_dict = defaultdict(list)
+    decision_dicts = []
 
     with open(filepath) as infile:
         lines = infile.read().strip().split('\n')
@@ -24,15 +33,27 @@ def load_decisions(filepath):
 
     for line in lines[1:]:
         line_list = line.split(',')
+        line_dict = dict()
         for header, value in zip(headers, line_list):
-            decision_dict[header].append(value)
+            line_dict[header] = value
+        decision_dicts.append(line_dict)
 
-    return decision_dict
+    return decision_dicts
 
+def get_all_hyponyms(syn):
 
+    all_hyponyms = []
 
+    for hypo in syn.hyponyms():
+        all_hyponyms.append(hypo)
 
-def get_levels_and_counts(decision_dict, name1, name2):
+    for hypo in all_hyponyms:
+        for hypo1 in hypo.hyponyms():
+            if hypo1 not in all_hyponyms:
+                all_hyponyms.append(hypo1)
+    return all_hyponyms
+
+def get_levels_and_counts(decision_dicts):
 
     depth_list = [] # depth concept1_syn, depth_decision_syn, difference
 
@@ -45,34 +66,52 @@ def get_levels_and_counts(decision_dict, name1, name2):
     depth_diffs = []
 
 
-    for c_syn, d_syn in zip(decision_dict[name1], decision_dict[name2]):
+    for decision_dict in decision_dicts:
 
         level_counter['overall'] += 1
 
-
-        if (c_syn != '-') and (d_syn != '-'):
-
+        if decision_dict['system'] == 'def':
             level_counter['wordnet_decisions'] += 1
-            c_depth = load_synset(c_syn).max_depth()
-            d_depth = load_synset(d_syn).max_depth()
 
-            if (c_depth == d_depth):
-                level_counter['same_syn'] += 1
+            decision_syns = [decision_dict['decision1_syn'], decision_dict['decision2_syn']]
+            concept1_syns = decision_dict['concept1_syns'].split(' ')
+            concept2_syns = decision_dict['concept2_syns'].split(' ')
 
-            elif (c_depth != d_depth):
-                level_counter['hypernym'] += 1
-                diff = c_depth - d_depth
-                depth_diffs.append(diff)
-        else:
-            c_depth = '-'
-            d_depth = '-'
-            diff = '-'
+            for decision_syn in decision_syns:
+                if decision_syn != '-':
+                    print('\nWorking on ', decision_syn)
+                    if decision_syn in concept1_syns + concept2_syns:
 
-        depth_list.append((c_depth, d_depth, diff))
+                        level_counter['same_syn'] += 1
+                    else:
+                        level_counter['hypernym'] += 1
 
-    level_counter['depth_diff_sum'] = sum(depth_diffs)
+                        # check the hight difference
+                        decision_synset = load_synset(decision_syn)
+                        hypos = get_all_hyponyms(decision_synset)
 
-    return depth_list, level_counter
+                        for concept_syn in concept1_syns + concept2_syns:
+                            #print(concept_syn)
+                            concept_syn = load_synset(concept_syn)
+                            if concept_syn:
+                                if concept_syn in hypos:
+
+                                    print('found the concept synset!', concept_syn)
+
+                                    depth_c = concept_syn.max_depth()
+                                    depth_d = decision_synset.max_depth()
+
+                                    depth_diff = depth_c - depth_d
+
+                                    print(depth_diff)
+                                    depth_diffs.append(depth_diff)
+
+    average_depth_difference = sum(depth_diffs) / len(depth_diffs)
+
+    return average_depth_difference, level_counter
+
+
+
 
 
 
@@ -82,37 +121,18 @@ def analyze_distinction_levels(system_name):
 
     filepath = '../results/decisions/'+system_name+'.txt'
 
-    decision_dict = load_decisions(filepath)
+    decision_dicts = load_decisions(filepath)
 
-    concept1_depths, level_counter1 = get_levels_and_counts(decision_dict, 'concept1_syn', 'decision1_syn')
-    concept2_depths, level_counter2 = get_levels_and_counts(decision_dict, 'concept2_syn', 'decision2_syn')
-
-    concepts1 = decision_dict['concept1']
-    concepts2 = decision_dict['concept2']
-    attributes = decision_dict['attribute']
-
-    overall_stats = level_counter1 + level_counter2
-    overall_stats['average_depth_difference'] = overall_stats['depth_diff_sum'] / overall_stats['hypernym']
+    av_depth_diff, level_counter = get_levels_and_counts(decision_dicts)
 
 
-    print(len(concepts1), len(concepts2), len(attributes))
-
-    with open('wordnet_distinction_level/'+system_name+'.txt', 'w') as outfile:
-
-        outfile.write('concept1,concept2,attribute,concept1_depth,decision1_depth,difference1,concept2_depth,decision2_depth,difference2\n')
-
-        for c1, c2, a, c1d, c2d in zip(concepts1, concepts2, attributes, concept1_depths, concept2_depths):
-
-            c1d_str = ','.join([str(v) for v in c1d])
-            c2d_str = ','.join([str(v) for v in c2d])
-            triple_str = ','.join([c1, c2, a])
-
-            outfile.write(triple_str+','+c1d_str+','+c2d_str+'\n')
+    print('writing results to file')
     # Write stats to file
     with open('wordnet_distinction_level/stats_'+system_name+'.txt', 'w') as outfile:
-        for k, v in overall_stats.items():
-            if k != 'depth_diff_sum':
-                outfile.write(k+','+str(v)+'\n')
+        outfile.write('av_depth_difference,'+str(av_depth_diff)+'\n')
+        for k, v in level_counter.items():
+
+            outfile.write(k+','+str(v)+'\n')
 
 
 
