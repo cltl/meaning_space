@@ -45,7 +45,6 @@ def get_most_frequent_categories(list_systems, n):
 
     system_name = list_systems[0]
     system_name = system_name.replace('-', '_')
-    print(system_name)
     system = 'categories/cat_'+system_name+'.txt'
     cat_freqs = []
 
@@ -76,7 +75,6 @@ def compare_performances(list_systems, cutoff):
     score_differences = []
     for n, c in enumerate(df_t):
         #scores = [v for v in df_t[c]]
-        print(c)
 
         value1 = df_t[c][0]
         value2 = df_t[c][1]
