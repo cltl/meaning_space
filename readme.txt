@@ -1,4 +1,5 @@
 System submitted to SemEval 2018 Task 10: Capturing discriminative attributes
+https://competitions.codalab.org/competitions/17326#learn_the_details
 
 Requirements:
 
