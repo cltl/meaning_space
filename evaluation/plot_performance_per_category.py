@@ -107,7 +107,7 @@ if __name__ == '__main__':
     #list_systems = glob.glob('error_analysis*.csv')[:3]
 
     #list_systems = ['baseline_sim_validation', 'baseline_subtraction_validation', ]
-    list_systems = ['baseline_sim_validation', 'baseline-definitions-validation', ]
+    #list_systems = ['baseline_sim_validation', 'baseline-definitions-validation', ]
     #list_systems = ['baseline-subtraction-validation', 'baseline-definitions-validation', ]
     #list_systems = ['baseline_sim_validation', 'baseline-subtraction-validation', 'baseline-definitions-validation' ]
     #list_systems = ['embeddings_baseline', 'analogy-scaled_mlp_emb_rev1-1-logistic']
