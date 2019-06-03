@@ -59,17 +59,24 @@ def f1_score(system_answers, gold_answers, system_triples, gold_triples):
             recall=float(tp)/(tp+fn)
             f1_positives = 2*((precision*recall)/(precision+recall))
 
-            result_dict['Precision'] =  precision
-            result_dict['Recall'] = recall
+            result_dict['Precision-positive'] =  precision
+            result_dict['Recall-positive'] = recall
         else:
-            result_dict['Precision'] = '-'
-            result_dict['Recall'] = '-'
+            result_dict['Precision-positive'] = '-'
+            result_dict['Recall-positive'] = '-'
 
 
         if tn>0:
             precision=float(tn)/(tn+fn)
             recall=float(tn)/(tn+fp)
+            result_dict['Precision-negative'] =  precision
+            result_dict['Recall-negative'] = recall
             f1_negatives = 2*((precision*recall)/(precision+recall))
+        else:
+            result_dict['Precision-negative'] =  '-'
+            result_dict['Recall-negative'] = '-'
+
+
         if f1_positives and f1_negatives:
             f1_average = (f1_positives+f1_negatives)/2.0
             result_dict['F1-average'] =  f1_average
@@ -104,7 +111,13 @@ def evaluate(data):
                 for res, val in results.items():
                     print(res, val)
 
-                outfile.write(system_name+','+str(results['Precision'])+','+str(results['Recall'])+','+str(results['F1-average'])+'\n')
+                #outfile.write(system_name+','+str(results['Precision-positive'])+','+str(results['Recall'])+','+str(results['F1-average'])+'\n')
+                outfile.write(','.join([system_name, \
+                str(results['Precision-positive']), \
+                str(results['Precision-negative']), \
+                str(results['Recall-positive']), \
+                str(results['Recall-negative']), \
+                str(results['F1-average']), '\n']))
 
 def evaluate_sort(data):
 
@@ -132,7 +145,12 @@ def evaluate_sort(data):
             if f1 == '-':
                 f1 = 0.0
 
-            results_list.append((f1, [system_name, str(results['Precision']), str(results['Recall']), str(results['F1-average'])]))
+            results_list.append((f1, [system_name, \
+            str(results['Precision-positive']), \
+            str(results['Precision-negative']), \
+            str(results['Recall-positive']),\
+            str(results['Recall-negative']),\
+             str(results['F1-average'])]))
         else:
             results_list.append((0.0, [system_name, '-', '-', '-']))
 
@@ -160,9 +178,9 @@ def results_to_table(results_list):
 
     print('\\begin{center}')
     print('\\begin{table}')
-    print('\\begin{tabular}{| l | l | l | l |}')
+    print('\\begin{tabular}{| l | l | l | l | l | l |}')
     print('\\hline')
-    print('System & Precision & Recall & F1-average \\\ \hline')
+    print('System & Precision-positive & Precision-negative & Recall-positive & Recall-negative & F1-average \\\ \hline')
     print('\\hline')
     print(' &  &  & \\\ \hline')
 
