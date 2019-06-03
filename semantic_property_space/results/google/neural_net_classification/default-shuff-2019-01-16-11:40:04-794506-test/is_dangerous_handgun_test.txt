@@ -1,7 +1,0 @@
-crossbow_bolt,1,
-axe,OOV,
-machette,1,
-imitation_handgun,1,
-imitation_pistol,1,
-strawberry,0,
-toy,0,

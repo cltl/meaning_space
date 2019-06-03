@@ -1,2 +1,0 @@
-feature,av_cos
-ci_is_dangerous,0.7633

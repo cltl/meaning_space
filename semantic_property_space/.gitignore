@@ -1,6 +1,0 @@
-
-# exclude data for now
-data/data_selected/*
-
-# exclude DS_Store file
-data/.DS_Store
